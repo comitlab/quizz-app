@@ -1,1 +1,11 @@
-<p>quiz-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let quiz of quizs">
+      <div class="card card-1">
+        <h3>{{ quiz.title }} </h3>
+        <p>Session : {{ quiz.session }}</p>
+        <p>Filiere :  {{ quiz.filiere }}</p>
+      </div>
+    </div>
+  </div>
+</div>

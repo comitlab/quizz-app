@@ -1,1 +1,55 @@
-<p>add-quiz works!</p>
+<div class="row boxForm">
+    <div class="col-sm-8 col-sm-offset-2">
+        <form [formGroup]="quizForm" (ngSubmit)="onSubmitForm()">
+          <div class="input-group">
+            <span class="input-group-addon">Title</span>
+            <input type="text" id="title" class="form-control" formControlName="title">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon">Session</span>
+            <select id="session" class="form-control" formControlName="session">
+              <option value="2019 - 2020">2019 - 2020</option>
+              <option value="2020 - 2021">2020 - 2021</option>
+              <option value="2021 - 2022">2021 - 2022</option>
+              <option value="2022 - 2023">2022 - 2023</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon">Filiere</span>
+            <select id="filiere" class="form-control" formControlName="filiere">
+              <option value="Infotmatique">Infotmatique</option>
+              <option value="Management">Management</option>
+              <option value="Droit">Droit</option>
+              <option value="Commerce">Commerce</option>
+            </select>
+          </div>
+
+          <div formArrayName="question">
+            <div class="input-group col-sm-offset-1" *ngFor="let questionControl of getQuestion().controls; let i = index">
+              <span class="input-group-addon">Question</span>
+              <input type="text" id="question" class="form-control" [formControlName]="i">
+            </div>
+
+            <div formArrayName="reply">
+                <div class="input-group col-sm-offset-2" *ngFor="let replyControl of getReply().controls; let j = index">
+                  <span class="input-group-addon">Reply</span>
+                  <input type="text" id="question" class="form-control" [formControlName]="j">
+                  <span class="input-group-addon">
+                      <input type="radio" name="trueRpl" id="">
+                  </span>
+                </div>
+
+                <button type="button" class="btn btn-success" (click)="onAddReply()">Add Reply</button>
+            </div>
+
+            <div class="quizBtn">
+                <button type="button" class="btn btn-success pull-right" (click)="onAddQuestion()">Add Question</button>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="quizForm.invalid" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+</div>

@@ -12,9 +12,10 @@ export class QuizComponent implements OnInit {
   constructor(private quizService: QuizService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-  //  const id = this.route.snapshot.params['id'];
+    const id = this.route.snapshot.params['id'];
 
-  //  this.title = this.app
+  //  this.title = this.quizService.getQuizById(+id).title;
+  //  this.session = this.quizService.getQuizById(+id).session;
   }
 
 }
