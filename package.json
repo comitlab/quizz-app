@@ -27,8 +27,7 @@
     "test:back:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive server/test"
   },
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "*.js": [
@@ -127,7 +126,6 @@
     "codecov": "^3.6.1",
     "codelyzer": "^5.0.0",
     "concurrently": "^5.0.2",
-    "cpx": "^1.5.0",
     "cross-env": "^6.0.3",
     "eslint": "^6.8.0",
     "eslint-config-leapfrog": "^2.0.1",
