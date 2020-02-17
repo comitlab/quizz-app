@@ -45,6 +45,12 @@ quizz-app/                              # → Root Application
 │   ├── assets/                        
 │   ├── environments/                   # → Frontend environments variables
 │   └── themes/                         
+├── .babelrc                            # → Babel configuration file
+├── .dockerignore                       # → Files to be ingnored on docker build
+├── .editorconfig                       # → Files to be ingnored on docker build
+├── .env.docker                         # → Docker env file exemple
+├── .env.example                        # → exemple env file
+├── .eslintrc                           # → Es linter configuration
 ├── jest.config.js                      # → node.js dependencies and scripts
 ├── package.json                        # → node.js dependencies and scripts
 ├── README.md                           # → ME :smile:
@@ -54,32 +60,58 @@ quizz-app/                              # → Root Application
 ├── tslint.json                         # → Typescript linter definition
 └── yarn.lock                           
 ```
-
 ---
 
-## Development server
+## Project setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Classic Mode
 
-## Code scaffolding
+Create `.env` file in the root project from `.env.example` and edit default parameters
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Docker Mode
 
-## Build
+Edit parameters in  `.env.docker` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Development
+
+### Setup
+
+* Run `yarn` from the theme directory to install dependencies
+
+### Build commands
+
+* `yarn start` — Compile and optimize backend & frontend
+* `yarn start:dev` — launch backend & frontend in dev mode
+* `yarn lint` — Run linter on backend & frontend
+* `yarn build` — Compile and optimize the  backend & frontend files concurrently
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `yarn test` to execute the unit tests via [Jest](https://jestjs.io) & [Chai](https://www.chaijs.com).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `yarn e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Production
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`Comming Soon`
+
+## Docker launching
+
+`Comming Soon`
+
+## Features
+
+- [ ] List Quizz API
+- [ ] Create Quizz API
+- [ ] Submit Quizz API
+- [ ] List Quizz Front
+- [ ] Submit Quizz Front
+- [ ] Authentication
+- [ ] Registration
+- [ ] Integrate [Keystone 5](https://www.keystonejs.com)
+- [ ] Launch With Docker
 
 [docker-badge]: https://c7.uihere.com/icons/424/905/308/docker-logo-media-social-icon-11643f08ed30aa3544e857cc6b477212.png
 [docker]: https://www.docker.com
