@@ -1,1 +1,6 @@
-<h1>From Quizz List !!</h1>
+<div>
+    <h1>From Quizz List !! </h1>
+    <ul>
+        <li *ngFor="let quizz of quizzs$ | async ">{{ quizz.name }}</li>
+    </ul>
+</div> 

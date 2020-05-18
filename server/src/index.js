@@ -24,6 +24,7 @@ initMongo();
 // https://docs.sentry.io/platforms/node/express/
 Sentry.init({ dsn: process.env.SENTRY_DSN });
 
+// Initialize Express
 const app = express();
 
 const APP_PORT =

@@ -1,8 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpClientModule } from "@angular/common/http"
+
 import { AppRoutingModule } from './app-routing.module';
-import {FooterComponent, HeaderComponent, MainComponent} from './layout';
+import { FooterComponent, HeaderComponent, MainComponent } from './layout';
+import { from } from 'rxjs';
+
+import { QuizzService } from './services/quizz/quizz.service';
 
 @NgModule({
   declarations: [
@@ -12,9 +17,12 @@ import {FooterComponent, HeaderComponent, MainComponent} from './layout';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    QuizzService
+  ],
   bootstrap: [MainComponent]
 })
 export class AppModule { }
