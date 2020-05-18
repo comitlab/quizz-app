@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,400i,600i,700,700i&display=swap');
 
 /*
 @import "~@angular/material/theming";
@@ -19,4 +20,6 @@
 body {
   margin: 0;
   padding: 0;
+  
+  font-family: 'Montserrat', sans-serif;
 }
