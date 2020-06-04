@@ -1,20 +1,19 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppTestModule} from '../../../app-test.module';
-import {FooterComponent} from '../..';
+import {HeaderComponent} from '../..';
 
 describe('Header Component', () => {
-  let component: FooterComponent;
+  let component: HeaderComponent;
   beforeEach(async (() => {
     TestBed.configureTestingModule({
       imports: [AppTestModule],
-      declarations: [FooterComponent]
+      declarations: [HeaderComponent]
     }).compileComponents();
-    component = TestBed.createComponent(FooterComponent);
+    component = TestBed.createComponent(HeaderComponent);
   }));
-  it('should create the FooterComponent', () => {
-    expect(component).toBeTruthy();
-  });
-  it('should write test for the component', () => {
-    // TODO : Write the test
+  it('should create the HeaderComponent', () => {
+    const fixture = TestBed.createComponent(HeaderComponent);
+    const headercmpnt = fixture.debugElement.componentInstance;
+    expect(headercmpnt).toBeTruthy();
   });
 });
