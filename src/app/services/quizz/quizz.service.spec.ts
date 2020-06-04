@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { QuizzService } from './quizz.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpTestingController } from '@angular/common/http/testing';
+import {SingleQuizz} from '../models/sigle-quizz.model';
 
 describe('QuizzService', () => {
   let service: QuizzService;
@@ -14,7 +15,7 @@ describe('QuizzService', () => {
   service = TestBed.get(QuizzService);
   httpestingCntrl = TestBed.get(HttpTestingController);
 
-  it('should be able to retrieve quizzs from the API by GET methode', () => { 
+  it('should be able to retrieve quizzs from the API by GET methode', () => {
     const service: QuizzService = TestBed.get(QuizzService);
     expect(service).toBeTruthy();
   });

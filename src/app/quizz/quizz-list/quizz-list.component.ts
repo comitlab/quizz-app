@@ -9,10 +9,10 @@ import { Observable } from 'rxjs';
 })
 export class QuizzListComponent implements OnInit {
 
-  quizzs$:Observable<any[]>;
+  quizzs$: Observable<any[]>;
 
   constructor(private quizzService: QuizzService) { }
- 
+
   ngOnInit() {
     this.quizzs$ = this.quizzService.getAllQuizz();
   }
