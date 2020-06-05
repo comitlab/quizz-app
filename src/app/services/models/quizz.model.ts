@@ -1,5 +1,3 @@
-import { SingleQuizz } from './sigle-quizz.model';
-
-export class QuizzModel {
+export class QUIZZ {
     name: string;
 }
