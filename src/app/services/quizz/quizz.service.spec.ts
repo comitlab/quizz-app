@@ -1,9 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { QuizzService } from './quizz.service';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpTestingController } from '@angular/common/http/testing';
 import { environment } from '../../../environments/environment';
-import { QUIZZ } from '../models/quizz.model';
+import { Quizz } from '../models/quizz.model';
 import {AppTestModule} from '../../app-test.module';
 
 describe('QuizzService', () => {
@@ -25,7 +24,7 @@ describe('QuizzService', () => {
   describe('getAllQuizz', () => {
     it('should get quizzs list from server', (done) => {
       // GIVEN
-      const dummyQuizzs: QUIZZ[] = [
+      const dummyQuizzs: Quizz[] = [
         {
           name: 'Quizz 1',
         },

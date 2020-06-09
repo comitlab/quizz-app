@@ -1,3 +1,3 @@
-export class QUIZZ {
+export class Quizz {
     name: string;
 }
