@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { QUIZZ } from '../models/quizz.model';
+import { Quizz } from '../models/quizz.model';
 
 const baseUrl = environment.apiUrl + '/quizz';
 
@@ -15,7 +15,7 @@ export class QuizzService {
   constructor(private http: HttpClient) { }
 
   getAllQuizz(): Observable<any[]> {
-    return this.http.get<QUIZZ>(baseUrl + '/all').pipe(
+    return this.http.get<Quizz>(baseUrl + '/all').pipe(
       map((response: any) => response.data)
       );
   }

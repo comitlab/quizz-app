@@ -9,7 +9,7 @@ const QuizzSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-    },
+    }
   },
   {
     versionKey: false,
