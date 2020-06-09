@@ -4,47 +4,57 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { environment } from '../../../environments/environment';
 import { QUIZZ } from '../models/quizz.model';
+import {AppTestModule} from '../../app-test.module';
 
 describe('QuizzService', () => {
   let service: QuizzService;
   let httpMock: HttpTestingController;
-  let baseUrl = environment.apiUrl + '/quizz';
-  beforeEach(() => TestBed.configureTestingModule({
-    imports: [HttpClientModule, HttpClientTestingModule],
-    providers: [QuizzService]
-  }));
+  const baseUrl = environment.apiUrl + '/quizz';
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [AppTestModule],
+      providers: [QuizzService]
+    });
+    service = TestBed.get(QuizzService);
+    httpMock = TestBed.get(HttpTestingController);
+  });
 
-  service = TestBed.get(QuizzService);
-  httpMock = TestBed.get(HttpTestingController);
-
-  it('should be able to retrieve quizzs from the API by GET methode', () => {
-    const service: QuizzService = TestBed.get(QuizzService);
+  it('should create service', () => {
     expect(service).toBeTruthy();
   });
-  it('should get quizzs', () => {
-    const dummyQuizzs: QUIZZ[] = [
-      {
-        name: "Quizz 1",
-      },
-      {
-        name: "Quizz 2",
-      },
-      {
-        name: "Quizz 3",
-      }
-    ];
-  service.getAllQuizz().subscribe(quizzs => {
-      expect(quizzs.length).toBe(2);
-      expect(quizzs).toEqual(dummyQuizzs);
-  });
+  describe('getAllQuizz', () => {
+    it('should get quizzs list from server', (done) => {
+      // GIVEN
+      const dummyQuizzs: QUIZZ[] = [
+        {
+          name: 'Quizz 1',
+        },
+        {
+          name: 'Quizz 2',
+        },
+        {
+          name: 'Quizz 3',
+        }
+      ];
+      const expectedResponse = {
+        data: dummyQuizzs
+      };
 
-  const request = httpMock.expectOne( `${baseUrl}/quizzs`);
-    expect(request.request.method).toBe('GET');
-    request.flush(dummyQuizzs);
+      // WHEN
+      service.getAllQuizz()
+        .subscribe(quizz => {
+        expect(requestMock.request.method).toBe('GET');
+        expect(quizz).toEqual(dummyQuizzs);
+        done();
+      });
+
+      const requestMock = httpMock.expectOne( `${baseUrl}/all`);
+      requestMock.flush(expectedResponse);
+    });
   });
 
   afterEach(() => {
     httpMock.verify();
   });
-  
+
 });
