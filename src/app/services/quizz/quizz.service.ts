@@ -14,9 +14,9 @@ export class QuizzService {
 
   constructor(private http: HttpClient) { }
 
-  getAllQuizz():Observable<any[]> {
+  getAllQuizz(): Observable<any[]> {
     return this.http.get<QUIZZ>(baseUrl + '/all').pipe(
-      map((response:any) => response.data) 
+      map((response: any) => response.data)
       );
   }
 
