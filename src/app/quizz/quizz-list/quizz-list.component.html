@@ -3,4 +3,10 @@
     <ul>
         <li *ngFor="let quizz of quizzs$ | async ">{{ quizz.name }}</li>
     </ul>
+
+    <!--
+        *********************************
+        (click)="getSingleQuizz(quizzId)"
+        *********************************
+    --> 
 </div> 

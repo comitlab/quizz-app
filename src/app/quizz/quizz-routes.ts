@@ -7,7 +7,7 @@ export const QUIZZ_ROUTES: Routes = [
     path: '',
     component: QuizzListComponent
   }, {
-    path: ':idQuizz',
+    path: ':idQuizz',  // quizz/:id
     component: QuizzDetailComponent
   }
 ];

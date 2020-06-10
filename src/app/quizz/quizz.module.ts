@@ -15,7 +15,10 @@ import {HttpClientModule} from '@angular/common/http';
     CommonModule,
     HttpClientModule
   ],
-  declarations: [QuizzListComponent, QuizzDetailComponent],
+  declarations: [
+    QuizzListComponent, 
+    QuizzDetailComponent
+  ],
   providers: [
     QuizzService
   ],
