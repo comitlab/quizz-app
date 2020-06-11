@@ -1,9 +1,56 @@
-.navbar-brand{
-    color: #7451eb;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-}
+// Color
+$primary: #7451eb;
+$white: #fff;
+
+// Shadow
+$shadow-inset: inset 0px 5px 10px -5px rgba(102,102,102,1);
+$shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 
 .navbar{
-    font-family: 'Montserrat', sans-serif;
+    /*
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    */
+    background: $white;
+    margin-bottom: 0px;
+
+    .navbar-brand{
+        color: $primary;
+        font-weight: 600;
+    }
+
+    li{
+        font-weight: 400;
+        
+        :active{
+            color: $primary;
+        }
+    }
+}
+
+.btn-outline-primary{
+    margin-top: 10px;
+    margin-right: 20px;
+    background: $primary;
+    color: $white;
+    -webkit-box-shadow: $shadow-outline;
+    -moz-box-shadow: $shadow-outline;
+    box-shadow: $shadow-outline;
+
+    &:hover{
+        box-shadow: $shadow-inset;
+    }
+}
+
+.jumbotron{
+    background: $primary;
+    color: $white;
+    -webkit-box-shadow: $shadow-inset;
+    -moz-box-shadow: $shadow-inset;
+    box-shadow: $shadow-inset;
+
+    p{
+        font-size: 16px;
+    }
 }
