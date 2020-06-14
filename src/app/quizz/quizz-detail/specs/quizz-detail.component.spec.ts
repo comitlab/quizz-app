@@ -1,17 +1,10 @@
-describe('Quizz Detail Component', () => {
-  it('should write test for the component', () => {
-    // TODO : Write the test
-  });
-});
-
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, TestBed} from '@angular/core/testing';
 import {AppTestModule} from '../../../app-test.module';
 import {QuizzDetailComponent} from '../quizz-detail.component';
 
-describe('Header Component', () => {
-  let fixture: ComponentFixture<QuizzDetailComponent>;
+describe('Quizz Detal Component', () => {
   let component: QuizzDetailComponent;
-
+  let fixture;
   beforeEach(async (() => {
     TestBed.configureTestingModule({
       imports: [AppTestModule],
@@ -19,7 +12,7 @@ describe('Header Component', () => {
     }).compileComponents();
     fixture = TestBed.createComponent(QuizzDetailComponent);
     fixture.detectChanges();
-    component = fixture.componentInstance;
+    component = fixture.debugElement.componentInstance;
   }));
   it('should create the QuizzDetailComponent', () => {
     expect(component).toBeTruthy();

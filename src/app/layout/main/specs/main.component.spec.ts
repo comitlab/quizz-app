@@ -9,7 +9,11 @@ describe('MainComponent', () => {
 
   beforeEach(async (() => {
     TestBed.configureTestingModule({
-      declarations: [MainComponent, HeaderComponent, FooterComponent],
+      declarations: [
+        MainComponent, 
+        HeaderComponent, 
+        FooterComponent
+      ],
       imports: [
         AppTestModule,
       ]

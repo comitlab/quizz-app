@@ -2,7 +2,7 @@ import {async, TestBed, ComponentFixture, inject} from '@angular/core/testing';
 import {AppTestModule} from '../../../app-test.module';
 import {QuizzListComponent} from '../quizz-list.component';
 import {QuizzService} from '../../../services/quizz/quizz.service';
-import {QUIZZ} from '../../../services/models/quizz.model';
+import {Quizz} from '../../../services/models/quizz.model';
 import {of} from 'rxjs';
 
 describe('Quizz List Component', () => {
@@ -34,14 +34,14 @@ describe('Quizz List Component', () => {
     it('should set QuizzListComponent\'s Observable quizz from QuizzService.getAllQuizz',
       async(inject([QuizzService], (quizzService: QuizzService) => {
         // GIVEN
-        const aQuizz1 = new  QUIZZ();
-        const aQuizz2 = new  QUIZZ();
-        const aQuizz3 = new  QUIZZ();
+        const aQuizz1 = new  Quizz();
+        const aQuizz2 = new  Quizz();
+        const aQuizz3 = new  Quizz();
         aQuizz1.name = 'aQuizz1';
         aQuizz2.name = 'aQuizz2';
         aQuizz3.name = 'aQuizz3';
 
-        const expectedQuizzList: QUIZZ[] = [aQuizz1, aQuizz2, aQuizz3];
+        const expectedQuizzList: Quizz[] = [aQuizz1, aQuizz2, aQuizz3];
         const spyGetAllQuizz = spyOn(quizzService, 'getAllQuizz').and.returnValue(of(expectedQuizzList));
 
         // WHEN
@@ -49,7 +49,7 @@ describe('Quizz List Component', () => {
 
         // THEN
         expect(spyGetAllQuizz).toHaveBeenCalledTimes(1);
-        return component.quizzs$.subscribe((quizzList: QUIZZ[]) => {
+        return component.quizzs$.subscribe((quizzList: Quizz[]) => {
           expect(quizzList).toEqual(expectedQuizzList);
         });
       }))
