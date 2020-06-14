@@ -27,12 +27,15 @@ describe('QuizzService', () => {
       const dummyQuizzs: Quizz[] = [
         {
           name: 'Quizz 1',
+          id: 1
         },
         {
           name: 'Quizz 2',
+          id: 2
         },
         {
           name: 'Quizz 3',
+          id: 3
         }
       ];
       const expectedResponse = {
