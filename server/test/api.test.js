@@ -1,6 +1,8 @@
 import app from '../src/index';
 import request from 'supertest';
 
+const expect = require('chai').expect;
+
 describe('Base API Test', () => {
   it('should return API version and title for the app', done => {
     request(app)

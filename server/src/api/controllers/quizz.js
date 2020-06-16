@@ -1,6 +1,5 @@
 import {getAllQuizz} from '../services/quizzService';
 import * as utils from '../middlewares/utils';
-import Quizz from '../models/quizz';
 
 /**
  * Get all quizz.
