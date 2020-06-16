@@ -1,6 +1,7 @@
-import Boom from '@hapi/boom';
 import Quizz from '../models/quizz';
 import * as  utils from '../middlewares/utils';
+
+// import Boom from '@hapi/boom';
 
 /**
  * Get all quizz.
@@ -20,6 +21,8 @@ export const getAllQuizz = async () =>
     (err, items) => {
       if (err) {
         reject(utils.buildErrObject(422, err.message));
+
+        return;
       }
       resolve(items);
     },
