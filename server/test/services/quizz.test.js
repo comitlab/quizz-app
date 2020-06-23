@@ -12,16 +12,16 @@ describe('Service quizz', () => {
     describe('getAllQuizz', () => {
         it('Should return buildErrorObject with error code status 422 and message when try to find Quizz items', (done) => {
             // Given
-            const expectedReject = 'expectedReject';
-            const spyFindItems = spyOn(service, 'getAllQuizz').and.returnValue(Promise.reject(expectedReject));
+            const expectedErr = 'expectedErr';
+            const spyFindItems = spyOn(service, 'getAllQuizz').and.returnValue(Promise.reject(expectedErr));
             const spyBuildErrorObject = spyOn(utils, 'buildErrObject');
             // When
 
-            service.getAllQuizz().catch(() => {
+            service.getAllQuizz().then(() => {
                 // Then
                 expect(spyFindItems).toHaveBeenCalledTimes(1);
                 expect(spyBuildErrorObject).toHaveBeenCalledTimes(1);
-                expect(spyBuildErrorObject).toHaveBeenCalledWith(expectedReject);
+                expect(spyBuildErrorObject).toHaveBeenCalledWith(expectedErr);
                 expect(res.statusCode).toEqual(422);
                 expect(res.body.errors.code).toEqual(422);
                 expect(res.body.errors.message).toEqual(spyBuildErrorObject.err.message);
@@ -29,17 +29,17 @@ describe('Service quizz', () => {
             });
         });
 
-        it('Should get Quizz items from getAllQuizz return promise with reject and resolve', (donne) => {
+        it('Should get Quizz items from getAllQuizz return promise with resolve', (donne) => {
             // Given
-            const expectedIems = 'expectedIems';
-            const spyGetAllQuizz = spyOn(service, 'getAllQuizz').and.returnValue(Promise.resolve(expectedIems));
+            const expectedItems = 'expectedItems';
+            const spyGetAllQuizz = spyOn(service, 'getAllQuizz').and.returnValue(Promise.resolve(expectedItems));
             // When
 
-            service.getAllQuizz().find(() => {
+            service.getAllQuizz().then(() => {
                 // Then
                 expect(spyGetAllQuizz).toHaveBeenCalledTimes(1);
                 expect(res.resolve).toHaveBeenCalledTimes(1);
-                expect(res.resolve).toHaveBeenCalledWith({items: expectedIems});
+                expect(res.resolve).toHaveBeenCalledWith({items: expectedItems});
             })
             donne();
         });
