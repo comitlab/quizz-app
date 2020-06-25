@@ -13,4 +13,10 @@ const requireAuth = passport.authenticate('jwt', {
  */
 router.get('/all', quizzController.fetchAll);
 
+/**
+ * GET single-quizz by ID param
+ */
+router.get('/quizz/:id', quizzController.fetchOne);
+
+
 export default router;

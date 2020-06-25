@@ -20,4 +20,8 @@ export class QuizzService {
       );
   }
 
+  getSingleQuizz(id:string) {
+    return this.http.get<Quizz>(baseUrl + '/quizz/' + id);
+  }
+
 }

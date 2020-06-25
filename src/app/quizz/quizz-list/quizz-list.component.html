@@ -1,6 +1,13 @@
-<div>
-    <h1>From Quizz List !! </h1>
-    <ul>
-        <li *ngFor="let quizz of quizzs$ | async ">{{ quizz.name }}</li>
-    </ul>
-</div> 
+<div class="row card-list">
+    <div class="card col-md-3" *ngFor="let quizz of quizzs$ | async ">
+        <div class="card-body">
+            <h3 class="card-title">Name : {{ quizz.name }}</h3>
+            <p>ID : {{ quizz._id }}</p>
+            <p class="card-text">Some quick example text to build on the card title 
+              and make up the bulk of the card's content.
+            </p>
+
+        </div>
+        <a [routerLink]="['/quizz', quizz._id]" class="btn btn-sm btn-outline-primary" type="button">VIEW TEST DETALS</a>
+    </div>
+</div>

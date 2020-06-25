@@ -1,0 +1,35 @@
+// Color
+$primary: #7451eb;
+$white: #fff;
+
+$radius: 5px;
+
+// Shadow
+$shadow-inset: inset 0px 5px 10px -5px rgba(102,102,102,1);
+$shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
+
+.btn-outline-primary{
+    margin-top: 10px;
+    margin-right: 20px;
+    background: $primary;
+    color: $white;
+    -webkit-box-shadow: $shadow-outline;
+    -moz-box-shadow: $shadow-outline;
+    box-shadow: $shadow-outline;
+
+    &:hover{
+        box-shadow: $shadow-inset;
+    }
+}
+
+
+.card-list{
+    display: flex;
+    justify-content: space-around;
+
+    .card{
+        padding-bottom: 20px;
+        border: 1px solid #f0f0f0;
+        border-radius: $radius;
+    }
+}
