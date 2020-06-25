@@ -2,9 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { QuizzService } from '../../services/quizz/quizz.service';
 import { Observable } from 'rxjs';
 
-//
-import { Router, ActivatedRoute } from '@angular/router';
-
 @Component({
   selector: 'iam-quizz-list',
   templateUrl: './quizz-list.component.html',
@@ -14,22 +11,11 @@ export class QuizzListComponent implements OnInit {
 
   quizzs$: Observable<any[]>;
 
-  public quizzId;
-  constructor(private quizzService: QuizzService,
-              private router: Router,
-              private activatedRoute: ActivatedRoute) { }
+  constructor(private quizzService: QuizzService) { }
 
   ngOnInit() {
     this.quizzs$ = this.quizzService.getAllQuizz();
-    /*
-    let id = parseInt(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.quizzId = id;
-    */
   }
 
-  // navigate towards single Quizz
-  getSingleQuizz(quizzId: number) {
-    this.router.navigate(['/all', quizzId]);
-  }
 }
 
