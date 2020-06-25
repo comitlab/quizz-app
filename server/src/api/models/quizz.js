@@ -6,8 +6,7 @@ const collectionName = modelName.toLowerCase();
 
 const QuizzSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true, },
-  //  _id: { type: String, required: true, }
+    name: { type: String, required: true, }
   },
   {
     versionKey: false,

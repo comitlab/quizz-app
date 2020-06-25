@@ -24,12 +24,10 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 
 
 .card-list{
-    display: flex;
-    justify-content: space-around;
 
     .card{
         padding-bottom: 20px;
-        border: 1px solid #f0f0f0;
+    //    border: 1px solid #f0f0f0;
         border-radius: $radius;
     }
 }

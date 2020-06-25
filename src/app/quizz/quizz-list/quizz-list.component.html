@@ -1,5 +1,5 @@
-<div class="row card-list">
-    <div class="card col-md-3" *ngFor="let quizz of quizzs$ | async ">
+<div class="container card-list">
+    <div class="card col-sm-12 col-md-6 col-lg-4" *ngFor="let quizz of quizzs$ | async ">
         <div class="card-body">
             <h3 class="card-title">Name : {{ quizz.name }}</h3>
             <p>ID : {{ quizz._id }}</p>
@@ -8,6 +8,6 @@
             </p>
 
         </div>
-        <a [routerLink]="['/quizz', quizz._id]" class="btn btn-sm btn-outline-primary" type="button">VIEW TEST DETALS</a>
+        <a [routerLink]="['/quizz', quizz._id]" class="btn btn-sm btn-outline-primary" type="button">VIEW QUIZZ DETALS</a>
     </div>
 </div>
