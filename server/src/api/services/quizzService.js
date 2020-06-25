@@ -29,10 +29,4 @@ export const getAllQuizz = async () =>
   );
 });
 
-export const findOne = async () => {
-  new Promise(() => {
-    Quizz.findById('5ebaec01df815b45b8ad7bdc')
-  })
-}
-
 
