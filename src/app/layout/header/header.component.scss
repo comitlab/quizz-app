@@ -16,11 +16,26 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
         font-weight: 600;
     }
 
-    li{
-        font-weight: 400;
-        
-        :active{
-            color: $primary;
+    .navbar-nav{
+        margin-left: 20px;
+
+        .nav-item{
+            margin-right: 20px;
+            font-weight: 400;
+
+            :active{
+                color: $primary;
+            }
+        }
+    }
+
+    .navbar-toggler{
+        background: $primary;
+
+        .navbar-toggler-icon{
+            color: $white;
+            width: 1.2em;
+            height: 1.2em;
         }
     }
 }
@@ -29,6 +44,7 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
     margin-top: 10px;
     margin-right: 20px;
     background: $primary;
+    border: none;
     color: $white;
     -webkit-box-shadow: $shadow-outline;
     -moz-box-shadow: $shadow-outline;
