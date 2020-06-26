@@ -1,7 +1,7 @@
-<h1>From Quizz Detail</h1>
+<h1>From Quizz List</h1>
 <hr>
 
-<div class="container card-list">
+<div class="container row card-list">
     <div class="card col-sm-12 col-md-6 col-lg-4" *ngFor="let quizz of quizzs$ | async ">
         <div class="card-body">
             <h3 class="card-title">Name : {{ quizz.name }}</h3>

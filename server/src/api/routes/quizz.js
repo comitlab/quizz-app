@@ -12,19 +12,11 @@ const requireAuth = passport.authenticate('jwt', {
 /**
  * GET /api/quizz
  */
-router.get('/all', quizzController.fetchAll);
+router.get('/', quizzController.fetchAll);
 
 /**
  * GET single-quizz by ID param
  */
-router.get('/quizz/:id', quizzController.fetchOne);
-
-/*
-router.get('/quizz/:id', (req, res, next) => {
-  Quizz.findOne({ _id: req.params.id })
-    .then(quizz => res.status(200).json(quizz))
-    .catch(err => res.status(404).json({ err }));
-});
-*/
+router.get('/:id', quizzController.fetchOne);
 
 export default router;

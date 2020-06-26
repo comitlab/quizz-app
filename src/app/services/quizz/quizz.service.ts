@@ -15,13 +15,15 @@ export class QuizzService {
   constructor(private http: HttpClient) { }
 
   getAllQuizz(): Observable<any[]> {
-    return this.http.get<Quizz>(baseUrl + '/all').pipe(
+    return this.http.get<Quizz>(baseUrl).pipe(
       map((response: any) => response.data)
       );
   }
 
   getSingleQuizz(id:string) {
-    return this.http.get<Quizz>(baseUrl + '/quizz/' + id);
+    return this.http.get<Quizz>(`${baseUrl}/${id}`).pipe(
+      map((response: any) => response.data)
+      );
   }
 
 }

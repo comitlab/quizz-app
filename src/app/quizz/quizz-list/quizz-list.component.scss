@@ -9,17 +9,12 @@ $shadow-inset: inset 0px 5px 10px -5px rgba(102,102,102,1);
 $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 
 .btn-outline-primary{
-    margin-top: 10px;
-    margin-right: 20px;
-    background: $primary;
-    border: none;
-    color: $white;
-    -webkit-box-shadow: $shadow-outline;
-    -moz-box-shadow: $shadow-outline;
-    box-shadow: $shadow-outline;
+    border: 1px solid $primary;
+    color: $primary;
 
     &:hover{
-        box-shadow: $shadow-inset;
+        color: $white;
+        background: $primary;
     }
 }
 

@@ -1,6 +1,6 @@
-<a routerLink="/" > <- Go back</a>
-
 <h1>From Quizz Detail</h1>
 <hr>
 <h3 >Name : {{(quizz$ | async)?.name }}</h3>
 <p>ID : {{(quizz$ | async)?._id }}</p>
+
+<a routerLink="/" class="btn btn-sm btn-outline-primary" type="button">Go back</a>

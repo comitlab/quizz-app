@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import { QuizzService } from '../../services/quizz/quizz.service';
 import { Observable } from 'rxjs';
+import { Quizz } from 'src/app/services/models/quizz.model';
 
 @Component({
   selector: 'iam-quizz-list',
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class QuizzListComponent implements OnInit {
 
-  quizzs$: Observable<any[]>;
+  quizzs$: Observable<Quizz[]>;
 
   constructor(private quizzService: QuizzService) { }
 

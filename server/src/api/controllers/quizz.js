@@ -1,6 +1,5 @@
-import {getAllQuizz} from '../services/quizzService';
+import {getAllQuizz, getOneQuizz} from '../services/quizzService';
 import * as utils from '../middlewares/utils';
-import Quizz from '../models/quizz';
 
 /**
  * Get all quizz.
@@ -20,8 +19,8 @@ export const fetchAll = async (req, res, next) => {
  */
 
 export const fetchOne = async (req, res, next) => {
-  Quizz.findOne({ _id: req.params.id })
-    .then(quizz => res.status(200).json(quizz))
-    .catch(err => res.status(404).json({ err }));
+  getOneQuizz(req.params.id)
+    .then(data => res.json({data}))
+    .catch(err => utils.handleError(res, err));
 }; 
 

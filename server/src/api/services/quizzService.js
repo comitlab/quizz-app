@@ -29,3 +29,20 @@ export const getAllQuizz = async () =>
   );
 });
 
+
+export const getOneQuizz = async (id) =>
+  new Promise((resolve, reject) => {
+    Quizz.findOne({ _id: id},
+      '-updatedAt -createdAt',
+      {},
+      (err, item) => {
+        if(err) {
+          reject(utils.buildErrObject(402, err.message));
+
+          return;
+        }
+        resolve(item);
+      }
+      )
+  })
+

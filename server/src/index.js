@@ -6,7 +6,6 @@ import path from 'path';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import express from 'express';
-// import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
 import compression from 'compression';
 import * as Sentry from '@sentry/node';
