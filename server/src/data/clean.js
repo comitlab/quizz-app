@@ -34,9 +34,11 @@ const clean = async () => {
     );
 
     await Promise.all(promiseArray);
+    // eslint-disable-next-line no-console
     console.log('Cleanup complete!');
     process.exit(0);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
     process.exit(0);
   }

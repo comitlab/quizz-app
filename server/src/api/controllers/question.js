@@ -1,4 +1,4 @@
-import {getAllQuizz, getOneQuizz} from '../services/quizzService';
+import {getAllQuestions, getOneQuestion} from '../services/question';
 import * as utils from '../middlewares/utils';
 
 /**
@@ -8,20 +8,22 @@ import * as utils from '../middlewares/utils';
  * @param {Object} res
  * @param  {Object} next
  */
+/**
+* GET all questions
+ */
 // eslint-disable-next-line require-await
 export const fetchAll = async (req, res, next) => {
-  getAllQuizz()
+  getAllQuestions()
     .then(data => res.json({data}))
     .catch(err => utils.handleError(res, err));
 };
 
 /**
-* GET single-quizz
+* GET single-question
  */
-
 // eslint-disable-next-line require-await
 export const fetchOne = async (req, res, next) => {
-  getOneQuizz(req.params.id)
+  getOneQuestion(req.params.id)
     .then(data => res.json({data}))
     .catch(err => utils.handleError(res, err));
 }; 

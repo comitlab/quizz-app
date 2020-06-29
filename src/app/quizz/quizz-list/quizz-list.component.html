@@ -1,12 +1,13 @@
 <h1>From Quizz List</h1>
 <hr>
 
-<div class="container row card-list">
-    <div class="card col-sm-12 col-md-6 col-lg-4" *ngFor="let quizz of quizzs$ | async ">
-        <div class="card-body">
-            <h3 class="card-title">Name : {{ quizz.name }}</h3>
-            <p>ID : {{ quizz._id }}</p>
+<div class="container">
+    <div class="row card-list">
+        <div [routerLink]="['/quizz', quizz._id]" class="card col-sm-12 col-md-6 col-lg-4" *ngFor="let quizz of quizzs$ | async ">
+            <div class="card-body">
+                <h3 class="card-title">Name : {{ quizz.name }}</h3>
+                <p>ID : {{ quizz._id }}</p>
+            </div>
         </div>
-        <a [routerLink]="['/quizz', quizz._id]" class="btn btn-sm btn-outline-primary" type="button">VIEW QUIZZ DETALS</a>
     </div>
 </div>

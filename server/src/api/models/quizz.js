@@ -6,7 +6,11 @@ const collectionName = modelName.toLowerCase();
 
 const QuizzSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true, }
+    name: { type: String, required: true, },
+    questions: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Question"
+    }]
   },
   {
     versionKey: false,
@@ -16,3 +20,4 @@ const QuizzSchema = new mongoose.Schema(
 
 QuizzSchema.plugin(mongoosePaginate);
 export default mongoose.model(modelName, QuizzSchema, collectionName);
+

@@ -1,10 +1,12 @@
 import express from 'express';
 import passport from'passport';
 import * as quizzController from '../controllers/quizz';
+import * as questionController from '../controllers/question';
 // import {Quizz} from '../models/quizz';
 
 const router = express.Router();
 
+// eslint-disable-next-line no-unused-vars
 const requireAuth = passport.authenticate('jwt', {
   session: false,
 });
@@ -18,5 +20,15 @@ router.get('/', quizzController.fetchAll);
  * GET single-quizz by ID param
  */
 router.get('/:id', quizzController.fetchOne);
+
+/**
+ * GET all questions by quizz
+ */
+router.get('/:id/questions', questionController.fetchAll);
+
+/**
+ * GET all questions by quizz
+ */
+router.get('/:id/questions/:id', questionController.fetchOne);
 
 export default router;

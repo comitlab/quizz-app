@@ -12,9 +12,11 @@ const collections = seeder.readCollectionsFromPath(path.resolve(__dirname, './se
 const main = async () => {
   try {
     await seeder.import(collections);
+    // eslint-disable-next-line no-console
     console.log('Seed complete!');
     process.exit(0);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err);
     process.exit(0);
   }
