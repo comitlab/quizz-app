@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { Quizz } from '../models/quizz.model';
 
 const baseUrl = environment.apiUrl + '/quizz';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,8 +21,13 @@ export class QuizzService {
 
   getSingleQuizz(id:string) {
     return this.http.get<Quizz>(`${baseUrl}/${id}`).pipe(
-      map((response: any) => response.data)
-      );
+      map((response: any) => response.data), 
+    );
   }
 
+  getQuizzQuestons(id): Observable<any[]> {
+    return this.http.get<Quizz>(`${baseUrl}/${id}/questions`).pipe(
+      map((response: any) => response.data), 
+    );
+  }
 }

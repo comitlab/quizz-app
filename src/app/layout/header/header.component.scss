@@ -38,8 +38,8 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 }
 
 .btn-outline-primary{
-    margin-top: 10px;
-    margin-right: 20px;
+    margin-top: 5px;
+    margin: 0px 20px;
     background: $primary;
     border: none;
     color: $white;
@@ -60,6 +60,7 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
     box-shadow: $shadow-inset;
 
     p{
-        font-size: 16px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
     }
 }

@@ -1,5 +1,6 @@
 // Color
 $primary: #7451eb;
+$primaryOpacity_1: #9074ef;
 $white: #fff;
 $grey: #f0f0f0;
 
@@ -26,13 +27,17 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
         cursor: pointer;
         border: none;
         top: 0;
-        transition: all 0.5s ease-in-out;
+        margin: 15px 0px;
+        padding: 0px;
+        transition: all 0.3s ease-in-out;
 
         &:hover{
-            color: $white;
-            background: $primary;
+            background: $primaryOpacity_1;
+            -webkit-transition: background-color 1000ms linear;
+            -ms-transition: background-color 1000ms linear;
+            transition: background-color 1000ms linear;
             top: -2px;
-            box-shadow: $shadow-outline;
+            color: $white;
         }
     }
 }
