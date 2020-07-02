@@ -1,6 +1,5 @@
 import {getAllQuizz, getOneQuizz} from '../services/quizzService';
 import * as utils from '../middlewares/utils';
-
 /**
  * Get all quizz.
  *
@@ -14,7 +13,6 @@ export const fetchAll = async (req, res, next) => {
     .then(data => res.json({data}))
     .catch(err => utils.handleError(res, err));
 };
-
 /**
 * GET single-quizz
  */

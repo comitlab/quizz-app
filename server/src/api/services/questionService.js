@@ -39,13 +39,13 @@ export const getOneQuestion = async (id) =>
     Question.findOne({ _id: id},
       '-updatedAt -createdAt',
       {},
-      (err, questtion) => {
+      (err, question) => {
         if(err) {
           reject(utils.buildErrObject(402, err.message));
 
           return;
         }
-        resolve(questtion);
-    }
-  )
-})
+        resolve(question);
+    },
+  );
+});
