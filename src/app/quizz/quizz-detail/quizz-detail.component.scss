@@ -1,6 +1,7 @@
 // Color
 $primary: #7451eb;
 $white: #fff;
+$silver: #f0f0f0;
 
 $radius: 5px;
 
@@ -19,5 +20,7 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 }
 
 .quizQuestionContent{
-    margin-left: 15px;
+    margin-left: 10%;
+    padding-left: 15px;
+    border-left: 1px solid $silver;
 }

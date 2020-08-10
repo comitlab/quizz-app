@@ -1,6 +1,7 @@
 import { validationResult } from '../middlewares/utils';
 import { check } from'express-validator/check';
 
+// eslint-disable-next-line jsdoc/require-param
 /**
  * Validates register request.
  */
@@ -40,6 +41,7 @@ export const register = [
   },
 ];
 
+// eslint-disable-next-line jsdoc/require-param
 /**
  * Validates login request.
  */
@@ -67,6 +69,7 @@ export const login = [
   },
 ];
 
+// eslint-disable-next-line jsdoc/require-param
 /**
  * Validates verify request.
  */
@@ -82,6 +85,7 @@ export const verify = [
   },
 ];
 
+// eslint-disable-next-line jsdoc/require-param
 /**
  * Validates forgot password request.
  */
@@ -99,6 +103,7 @@ export const forgotPassword = [
   },
 ];
 
+// eslint-disable-next-line jsdoc/require-param
 /**
  * Validates reset password request.
  */

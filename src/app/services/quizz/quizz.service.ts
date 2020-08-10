@@ -25,7 +25,7 @@ export class QuizzService {
     );
   }
 
-  getQuizzQuestons(id): Observable<any[]> {
+  getQuizzQuestons(id:string): Observable<any[]> {
     return this.http.get<Quizz>(`${baseUrl}/${id}/questions`).pipe(
       map((response: any) => response.data), 
     );

@@ -18,4 +18,3 @@ const QuizzSchema = new Schema(
 
 QuizzSchema.plugin(mongoosePaginate);
 export default mongoose.model(modelName, QuizzSchema, collectionName);
-

@@ -9,18 +9,20 @@ import * as utils from '../middlewares/utils';
  * @param  {Object} next
  */
 /**
-* GET all questions
+* GET all questions by QuizzID
  */
-export const fetchAll = async (req, res, next) => {
+
+export const fetchAll = (req, res, next) => {
   getAllQuestions()
-    .then(data => res.json({data}))
+    .then(data => res.json({data})) 
     .catch(err => utils.handleError(res, err));
 };
 
 /**
 * GET single-question
  */
-export const fetchOne = async (req, res, next) => {
+
+export const fetchOne = (req, res, next) => {
   getOneQuestion(req.params.id)
     .then(data => res.json({data}))
     .catch(err => utils.handleError(res, err));

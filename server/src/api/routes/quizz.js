@@ -25,7 +25,7 @@ router.get('/:id', quizzController.fetchOne);
 router.get('/:id/questions', questionController.fetchAll);
 
 /**
- * GET all questions by quizz
+ * GET one questions by quizz
  */
 router.get('/:id/questions/:id', questionController.fetchOne);
 

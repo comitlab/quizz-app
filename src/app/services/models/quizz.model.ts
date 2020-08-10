@@ -1,6 +1,6 @@
 import {Question} from './question.model';
 export class Quizz {
-    name: string;
     _id:  string;
+    name: string;
     questions: Question[];
 }

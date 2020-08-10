@@ -13,18 +13,14 @@ describe('Quizz List Component', () => {
     TestBed.configureTestingModule({
       declarations: [QuizzListComponent],
       providers: [QuizzService],
-      imports: [
-        AppTestModule,
-      ]
-    })
-      .compileComponents()
+      imports: [AppTestModule],
+    }).compileComponents()
       .then(() => {
         fixture = TestBed.createComponent(QuizzListComponent);
         fixture.detectChanges();
         component = fixture.componentInstance;
       });
   }));
-
 
   it('should create the QuizzListComponent', () => {
     expect(component).toBeTruthy();

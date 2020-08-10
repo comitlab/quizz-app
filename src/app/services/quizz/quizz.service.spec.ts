@@ -26,16 +26,19 @@ describe('QuizzService', () => {
       // GIVEN
       const dummyQuizzs: Quizz[] = [
         {
-          name: 'Quizz 1',
-          _id: '5ebaec01df815b45b8ad7bdc'
+          name: 'Quizz n°1',
+          _id: '5f045a09d69de41dd07ab074',
+          questions : []
         },
         {
-          name: 'Quizz 2',
-          _id: '5ebaec01df815b45b8ad7bdd'
+          name: 'Quizz n°2',
+          _id: '5f045a09d69de41dd07ab075',
+          questions : []
         },
         {
-          name: 'Quizz 3',
-          _id: '5ebaec01df815b45b8ad7bde'
+          name: 'Quizz n°3',
+          _id: '5f045a09d69de41dd07ab076',
+          questions : []
         }
       ];
       const expectedResponse = {
@@ -50,7 +53,7 @@ describe('QuizzService', () => {
         done();
       });
 
-      const requestMock = httpMock.expectOne( `${baseUrl}/all`);
+      const requestMock = httpMock.expectOne( `${baseUrl}`);
       requestMock.flush(expectedResponse);
     });
   });

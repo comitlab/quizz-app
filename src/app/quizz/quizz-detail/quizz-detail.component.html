@@ -2,14 +2,23 @@
 <hr>
 <h3 >Name : {{(quizz$ | async)?.name }}</h3>
 <p>ID : {{(quizz$ | async)?._id }}</p>
+<hr>
 
-<div *ngFor="let question of questions$ | async">
+<div class="quizQuestionContent">
+    <p>ID Question : {{(quizz$ | async)?.questions[0]._id }}</p>
+    <p>Title Question : {{(quizz$ | async)?.questions[0].title }}</p>
+    <p>Note Question : {{(quizz$ | async)?.questions[0].note }}</p>
+</div>
+
+<!-- 
+    <div *ngFor="let question of questions$ | async">
     <div class="quizQuestionContent">
         <p>ID : {{question._id}} </p>
         <p>Title : {{question.title}} </p>
-        <p>Description : {{question.description}} </p>
+        <p>Note : {{question.note}} </p>
         <hr>
     </div>
 </div>
+-->
 
 <a routerLink="/" class="btn btn-sm btn-outline-primary" type="button">Go back</a>

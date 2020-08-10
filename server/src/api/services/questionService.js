@@ -8,8 +8,8 @@ import * as  utils from '../middlewares/utils';
  *
  * @returns {Promise}
  */
-// eslint-disable-next-line require-await
-export const getAllQuestions = async () =>
+
+export const getAllQuestions = () =>
   new Promise((resolve, reject) => {
     Question.find(
     {},
@@ -33,8 +33,8 @@ export const getAllQuestions = async () =>
 /**
  * Get all one question.
 */
-// eslint-disable-next-line require-await
-export const getOneQuestion = async (id) =>
+
+export const getOneQuestion = (id) =>
   new Promise((resolve, reject) => {
     Question.findOne({ _id: id},
       '-updatedAt -createdAt',
@@ -49,3 +49,4 @@ export const getOneQuestion = async (id) =>
     },
   );
 });
+

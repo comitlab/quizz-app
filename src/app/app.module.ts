@@ -2,14 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import {FooterComponent, HeaderComponent, MainComponent, NavComponent} from './layout';
+import {FooterComponent, HeaderComponent, MainComponent} from './layout';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    NavComponent,
   ],
   imports: [
     BrowserModule,
