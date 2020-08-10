@@ -11,7 +11,6 @@ import * as utils from '../middlewares/utils';
 /**
 * GET all questions
  */
-// eslint-disable-next-line require-await
 export const fetchAll = async (req, res, next) => {
   getAllQuestions()
     .then(data => res.json({data}))
@@ -21,7 +20,6 @@ export const fetchAll = async (req, res, next) => {
 /**
 * GET single-question
  */
-// eslint-disable-next-line require-await
 export const fetchOne = async (req, res, next) => {
   getOneQuestion(req.params.id)
     .then(data => res.json({data}))

@@ -1,22 +1,24 @@
 import faker from 'faker';
 
+import question from "../3.question/question";
+
 export default [
   {
-    name: "Quizz n°1",
+    name: faker.name.title(),
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    questions: []
+    questions: [question[0]._id, question[3]._id]
   },
   {
-    name: "Quizz n°2",
+    name: faker.name.title(),
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    questions: []
+    questions: [question[2]._id]
   },
   {
-    name: "Quizz n°3",
+    name: faker.name.title(),
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    questions: []
+    questions: [question[1]._id]
   }
 ];

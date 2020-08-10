@@ -2,11 +2,9 @@ import express from 'express';
 import passport from'passport';
 import * as quizzController from '../controllers/quizz';
 import * as questionController from '../controllers/question';
-// import {Quizz} from '../models/quizz';
 
 const router = express.Router();
 
-// eslint-disable-next-line no-unused-vars
 const requireAuth = passport.authenticate('jwt', {
   session: false,
 });

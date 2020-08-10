@@ -13,7 +13,7 @@ export const getAllQuizz = async () =>
   new Promise((resolve, reject) => {
     Quizz.find(
     {},
-    '-updatedAt -createdAt',
+    '-updatedAt -createdAt -questions',
     {
       sort: {
         name: 1,
@@ -47,5 +47,5 @@ export const getOneQuizz = async (id) =>
         }
         resolve(item);
     }
-  )
+  ).populate('questions')
 })
