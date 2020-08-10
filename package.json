@@ -23,8 +23,7 @@
     "seed:database": "babel-node server/src/data/seed",
     "clean:database": "babel-node server/src/data/clean",
     "test:front": "ng test",
-    "test:back": "cross-env NODE_ENV=test mocha --exit --recursive --require @babel/register server/test",
-    "test:back:coverage": "cross-env NODE_ENV=test nyc --require @babel/register --reporter lcov --reporter text mocha --exit --recursive server/test"
+    "test:back": "jest --detectOpenHandles -c server/jest.config.js"
   },
   "husky": {
     "hooks": {}
@@ -136,7 +135,6 @@
     "jasmine-spec-reporter": "~4.2.1",
     "jest": "24.9.0",
     "lint-staged": "^9.5.0",
-    "mocha": "^6.2.2",
     "mongo-seeding": "^3.2.0",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",

@@ -1,15 +1,16 @@
-import { expect } from 'chai';
 import app from '../src/index';
 import request from 'supertest';
 
+
 describe('Base API Test', () => {
+
   it('should return API version and title for the app', done => {
     request(app)
       .get('/api')
       .end((err, res) => {
-        expect(res.statusCode).to.be.equal(200);
-        expect(res.body.app).to.be.equal(app.locals.title);
-        expect(res.body.apiVersion).to.be.equal(app.locals.version);
+        expect(res.statusCode).toEqual(200);
+        expect(res.body.app).toEqual(app.locals.title);
+        expect(res.body.apiVersion).toEqual(app.locals.version);
 
         done();
       });
@@ -23,11 +24,12 @@ describe('Base API Test', () => {
     request(app)
       .get(`/api/${randomString}`)
       .end((err, res) => {
-        expect(res.statusCode).to.be.equal(404);
-        expect(res.body.errors.code).to.be.equal(404);
-        expect(res.body.errors.message).to.be.equal('URL_NOT_FOUND');
+        expect(res.statusCode).toEqual(404);
+        expect(res.body.errors.code).toEqual(404);
+        expect(res.body.errors.message).toEqual('URL_NOT_FOUND');
 
         done();
       });
   });
 });
+
