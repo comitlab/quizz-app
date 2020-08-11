@@ -3,7 +3,8 @@ import { QuizzService } from './quizz.service';
 import { HttpTestingController } from '@angular/common/http/testing';
 import { environment } from '../../../environments/environment';
 import { Quizz } from '../models/quizz.model';
-import {AppTestModule} from '../../app-test.module';
+import { Question } from '../models/question.model';
+import { AppTestModule } from '../../app-test.module';
 
 describe('QuizzService', () => {
   let service: QuizzService;
@@ -26,19 +27,19 @@ describe('QuizzService', () => {
       // GIVEN
       const dummyQuizzs: Quizz[] = [
         {
-          name: 'Quizz n°1',
-          _id: '5f045a09d69de41dd07ab074',
-          questions : []
+          name: 'Central Tactics Developer',
+          _id: '5f3186351f02643e88e11d66',
+          questions : 
         },
         {
-          name: 'Quizz n°2',
-          _id: '5f045a09d69de41dd07ab075',
-          questions : []
+          name: 'Forward Solutions Director',
+          _id: '5f3186351f02643e88e11d65',
+          questions : 
         },
         {
-          name: 'Quizz n°3',
-          _id: '5f045a09d69de41dd07ab076',
-          questions : []
+          name: 'Future Research Executive',
+          _id: '5f3186351f02643e88e11d67',
+          questions : 
         }
       ];
       const expectedResponse = {

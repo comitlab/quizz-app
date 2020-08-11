@@ -4,10 +4,10 @@
 <p>ID : {{(quizz$ | async)?._id }}</p>
 <hr>
 
-<div class="quizQuestionContent">
-    <p>ID Question : {{(quizz$ | async)?.questions[0]._id }}</p>
-    <p>Title Question : {{(quizz$ | async)?.questions[0].title }}</p>
-    <p>Note Question : {{(quizz$ | async)?.questions[0].note }}</p>
+<div *ngFor="let question of questions$ | async" class="quizQuestionContent">
+    <p>Question ID : {{ question._id }}</p>
+    <p>Question Title : {{ question.title }}</p>
+    <p>Question Note : {{ question.note }}</p>
 </div>
 
 <!-- 
@@ -18,7 +18,7 @@
         <p>Note : {{question.note}} </p>
         <hr>
     </div>
-</div>
+</div> 
 -->
 
 <a routerLink="/" class="btn btn-sm btn-outline-primary" type="button">Go back</a>

@@ -6,6 +6,7 @@ const expect = require('chai').expect;
 
 describe('Controller Quizz', () => {
   let req, res;
+
   beforeEach(() => {
     req = jasmine.createSpyObj('req', ['send'])
     res = jasmine.createSpyObj('res', ['json'])
@@ -32,9 +33,10 @@ describe('Controller Quizz', () => {
       const spyGetAllQuizz = spyOn(service, 'getAllQuizz').and.returnValue(Promise.reject(expectedError))
       const spyHandelError = spyOn(utils, 'handleError');
 
-      //When
+      // When
       controller.fetchAll(req, res).catch(() => {
-        //Then
+        
+      // Then
         expect(spyGetAllQuizz).toHaveBeenCalledTimes(1);
         expect(spyHandelError).toHaveBeenCalled(1);
         expect(spyHandelError).toHaveBeenCalledWith(req, expectedError);

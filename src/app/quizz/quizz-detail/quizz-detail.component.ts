@@ -4,6 +4,7 @@ import { QuizzService } from '../../services/quizz/quizz.service';
 import { Observable } from 'rxjs';
 import { Quizz } from 'src/app/services/models/quizz.model';
 import { Question } from 'src/app/services/models/question.model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'iam-quizz-detail',
@@ -21,6 +22,7 @@ export class QuizzDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizz$ = this.quizzService.getSingleQuizz(id);
     const quizzId = this.route.snapshot.paramMap.get('id');
-    this.questions$ = this.quizzService.getQuizzQuestons(quizzId);
+
+    this.questions$ =  this.quizz$.pipe(map(quizz =>quizz.questions))
   }
 }
