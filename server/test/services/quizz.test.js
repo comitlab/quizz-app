@@ -5,7 +5,7 @@ const expect = require('chai').expect;
 
 describe('Service quizz', () => {
     let res; // A resolve or a Reject
-    
+
     beforeEach(() => {
         res = jasmine.createSpyObj('res', ['resolve, reject']); // err
     })
