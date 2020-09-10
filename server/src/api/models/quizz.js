@@ -8,6 +8,7 @@ const collectionName = modelName.toLowerCase();
 const QuizzSchema = new Schema(
   {
     name: { type: String, required: true, },
+    categorie: { type: String, required: true, },
     questions: [{ type: Schema.Types.ObjectId, ref: "Question" }],
   },
   {

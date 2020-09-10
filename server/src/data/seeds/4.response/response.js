@@ -1,68 +1,54 @@
 import faker from 'faker';
 import {ObjectID} from 'mongodb';
 
-import response from '../4.response/response';
-
 export default [
   {
     _id: new ObjectID(),
     title: faker.name.title(),
     description: faker.lorem.paragraph(),
-    note: 3,
-    nameAttribute: 1,
+    etat: true,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    responses: [response[0]._id, response[0]._id]
   },
   {
     _id: new ObjectID(),
     title: faker.name.title(),
     description: faker.lorem.paragraph(),
-    note: 2,
-    nameAttribute: 2,
+    etat: true,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    responses: [response[0]._id, response[0]._id]
   },
   {
     _id: new ObjectID(),
     title: faker.name.title(),
     description: faker.lorem.paragraph(),
-    note: 5,
-    nameAttribute: 3,
+    etat: true,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    responses: [response[0]._id, response[0]._id]
   },
   {
     _id: new ObjectID(),
     title: faker.name.title(),
     description: faker.lorem.paragraph(),
-    note: 3,
-    nameAttribute: 4,
+    etat: false,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    responses: [response[0]._id, response[0]._id]
   },
   {
     _id: new ObjectID(),
     title: faker.name.title(),
     description: faker.lorem.paragraph(),
-    note: 1,
-    nameAttribute: 5,
+    etat: false,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    responses: [response[0]._id, response[0]._id]
   },
   {
     _id: new ObjectID(),
     title: faker.name.title(),
     description: faker.lorem.paragraph(),
-    note: 2,
-    nameAttribute: 6,
+    etat: false,
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    responses: [response[0]._id, response[0]._id]
   },
 
 ];

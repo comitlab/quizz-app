@@ -31,12 +31,12 @@ export const getAllQuestions = () =>
 });
 
 /**
- * Get all one question.
+ * Get one question.
 */
 
 export const getOneQuestion = (id) =>
   new Promise((resolve, reject) => {
-    Question.findOne({ _id: id},
+    Question.findOne({_id: id},
       '-updatedAt -createdAt',
       {},
       (err, question) => {

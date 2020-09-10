@@ -1,24 +1,47 @@
-<h1>From Quizz Detail</h1>
-<hr>
-<h3 >Name : {{(quizz$ | async)?.name }}</h3>
-<p>ID : {{(quizz$ | async)?._id }}</p>
+<h2>{{(quizz$ | async)?.name }}</h2>
+<p>{{(quizz$ | async)?.categorie  }}</p>
 <hr>
 
-<div *ngFor="let question of questions$ | async" class="quizQuestionContent">
-    <p>Question ID : {{ question._id }}</p>
-    <p>Question Title : {{ question.title }}</p>
-    <p>Question Note : {{ question.note }}</p>
+<div id="quizz">
+    <div class="quizz-list">
+        <div class="quizz-item">
+            <div *ngFor="let question of questions$ | async"  class="quizz-content">
+                <div class="quizz-icon status-intransit">
+                    <svg class="svg-inline--fa fa-circle fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="circle" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                        <path fill="currentColor" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"></path>
+                    </svg>
+                </div>
+                <div class="quizz-note">Note<span>({{ question.note }}) Ponts</span></div>
+                <h3>{{ question.title }}</h3>
+                <p>{{ question.description }}</p>
+                <span>
+                    <ul *ngFor="let question of questions$ | async" class="list-group checked-list-box">
+                        <p>
+                            <label class="list-group-item">
+                                <input type="radio" name="{{question.nameAttribute }}" id="" > {{ question.title }}
+                            </label>
+                        </p>
+                    </ul>
+                </span>
+            </div>  
+        </div>
+    </div>
 </div>
 
 <!-- 
-    <div *ngFor="let question of questions$ | async">
-    <div class="quizQuestionContent">
-        <p>ID : {{question._id}} </p>
-        <p>Title : {{question.title}} </p>
-        <p>Note : {{question.note}} </p>
+<div *ngFor="let question of questions$ | async" class="quizQuestionContent">
+    <h4>{{ question.title }} <span>({{ question.note }}) Ponts</span> </h4>
+    <p> {{ question._id }}</p>
+    <p>{{ question.description }}</p>
+    <hr>
+    <div *ngFor="let response of responses$ | async" class="quizzresponseContent">
+        <p>Response ID : {{ response._id }}</p>
+        <p>Response Title : {{ response.title }}</p>
+        <p>Response Description : {{ response.description }}</p>
+        <p>Response Etat : {{ response.etat }}</p>
         <hr>
     </div>
-</div> 
+</div>
 -->
 
 <a routerLink="/" class="btn btn-sm btn-outline-primary" type="button">Go back</a>

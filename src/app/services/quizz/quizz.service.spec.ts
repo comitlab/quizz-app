@@ -30,13 +30,11 @@ describe('QuizzService', () => {
           name: 'Central Tactics Developer',
           _id: '5f3186351f02643e88e11d66',
           questions : 
-        },
-        {
+        }, {
           name: 'Forward Solutions Director',
           _id: '5f3186351f02643e88e11d65',
           questions : 
-        },
-        {
+        }, {
           name: 'Future Research Executive',
           _id: '5f3186351f02643e88e11d67',
           questions : 

@@ -5,7 +5,7 @@ import {RouterModule} from '@angular/router';
 import {QUIZZ_ROUTES} from './quizz-routes';
 
 // For using the directive *ngFor
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {QuizzService} from '../services/quizz/quizz.service';
 import {HttpClientModule} from '@angular/common/http';
 

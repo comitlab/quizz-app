@@ -33,9 +33,9 @@ describe('Quizz List Component', () => {
         const aQuizz1 = new  Quizz();
         const aQuizz2 = new  Quizz();
         const aQuizz3 = new  Quizz();
-        aQuizz1.name = 'aQuizz1';
-        aQuizz2.name = 'aQuizz2';
-        aQuizz3.name = 'aQuizz3';
+        aQuizz1.name = 'Central Tactics Developer';
+        aQuizz2.name = 'Forward Solutions Director';
+        aQuizz3.name = 'Future Research Executive';
 
         const expectedQuizzList: Quizz[] = [aQuizz1, aQuizz2, aQuizz3];
         const spyGetAllQuizz = spyOn(quizzService, 'getAllQuizz').and.returnValue(of(expectedQuizzList));

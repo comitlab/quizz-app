@@ -19,8 +19,97 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
     }
 }
 
-.quizQuestionContent{
+.quizQuestionContent, .quizzresponseContent{
     margin-left: 10%;
     padding-left: 15px;
-    border-left: 1px solid $silver;
+}
+
+
+.quizz-detail {
+        padding:1rem 0
+   }
+   #quizz {
+        margin-bottom: 5%;
+   }
+   [class*=quizz-status-] p {
+        margin:0;
+        font-size:18px;
+        color:$white;
+        text-transform:uppercase;
+        text-align:center;
+        font-weight: 600;
+   }
+   [class*=quizz-status-] {
+        padding:1.6rem 0
+   }
+   .quizz-list {
+        border-radius: 5px;
+        background-color: $white;
+   }
+   .quizz-item {
+        border-left:1px solid #ddd;
+        position:relative;
+        padding:2rem 1.5rem .5rem 2.5rem;
+        font-size: 12px;
+        margin-left:3rem;
+        min-height:5rem
+   }
+   .quizz-item .list-group-item{
+        border: none;
+   }
+   .quizz-item:last-child {
+        padding-bottom:4rem
+   }
+   .quizz-item .quizz-note {
+        margin-bottom:.5rem
+   }
+   .quizz-item .quizz-note span {
+        color:#888;
+        font-size:75%;
+        padding-left:.5rem;
+        padding-top: 5px;
+   }
+   .quizz-item .quizz-content {
+        padding:.5rem .8rem;
+        background-color:#f4f4f4;
+   }
+   .quizz-item .quizz-content span {
+        display:block;
+        color:#888;
+   }
+   .quizz-item .quizz-icon {
+        line-height:2.6rem;
+        position:absolute;
+        left:-1.3rem;
+        width:2.6rem;
+        height:2.6rem;
+        text-align:center;
+        border-radius:50%;
+        font-size:0.7rem;
+        background-color:$white;
+        color:$white
+   }
+   .quizz-item .quizz-icon.status-intransit {
+        color:#ddd;
+        border:1px solid $primary;
+        font-size:.2rem
+   }
+   @media(min-width:992px) {
+        .quizz-item {
+        margin-left:10rem
+    }
+    .quizz-item .quizz-note {
+        position:absolute;
+        left:-10rem;
+        width:7.5rem;
+        text-align:right
+    }
+    .quizz-item .quizz-note span {
+        display:block;
+        padding: 0px;
+    }
+    .quizz-item .quizz-content {
+        padding:0;
+        background-color:transparent
+    }
 }

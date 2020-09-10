@@ -2,7 +2,7 @@ import {async, TestBed, ComponentFixture, inject} from '@angular/core/testing';
 import {AppTestModule} from '../../../app-test.module';
 import {QuizzDetailComponent} from '../quizz-detail.component';
 import {QuizzService} from '../../../services/quizz/quizz.service';
-import {Quizz} from '../../../services/models/quizz.model';
+import {Question} from '../../../services/models/question.model';
 import {of} from 'rxjs';
 
 describe('QuizzDetailComponent Component', () => {
@@ -29,23 +29,17 @@ describe('QuizzDetailComponent Component', () => {
     it('should set QuizzDetailsComponent\'s Observable quizz from QuizzService.getSingleQuizz',
       async(inject([QuizzService], (quizzService: QuizzService) => {
         // GIVEN
-        const aQuizz1 = new  Quizz();
-        const aQuizz2 = new  Quizz();
-        const aQuizz3 = new  Quizz();
-        aQuizz1._id = '1';
-        aQuizz2._id = '2';
-        aQuizz3._id = '3';
-      //  const _id = aQuizz1._id;
-
-        const expectedGetOneSingleQuizz: Quizz[] = [aQuizz1, aQuizz2, aQuizz3];
+        const aQuestion1 = new  Question();
+        const aQuestion2 = new  Question();
+        aQuestion1._id = '5f3186332de3583e88fb4abc';
+        aQuestion2._id = '5f3186332de3583e88fb4abd';
+        const expectedGetOneSingleQuizz: Question[] = [aQuestion1, aQuestion2];
         const spyGetOneQuizz = spyOn(quizzService, 'getSingleQuizz').and.returnValue(of(expectedGetOneSingleQuizz));
-
         // WHEN
         component.ngOnInit();
-
         // THEN
         expect(spyGetOneQuizz).toHaveBeenCalledTimes(1);
-        return component.quizz$.subscribe((quizzDatails: Quizz["_id: 1"]) => {
+        return component.questions$.subscribe((quizzDatails: Question[]) => {
           expect(quizzDatails).toEqual(expectedGetOneSingleQuizz);
         });
       }))
