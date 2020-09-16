@@ -29,6 +29,6 @@ export class QuizzDetailComponent implements OnInit {
 
     this.questions$ = this.quizz$.pipe(map(quizz => quizz.questions));
     //
-    this.responses$ = this.questions$.pipe(map(question => question.responses));
+  //  this.responses$ = this.questions$.pipe(map(question => question.responses));
   }
 }

@@ -1,0 +1,25 @@
+input, span{
+    border-radius: 0px !important;
+}
+
+.input-group, .btn-outline-primary{
+    margin-bottom: 25px;
+}
+
+.btn-outline-primary{
+    background: #7451eb;
+    border: none;
+    color: #fff;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(102,102,102,1);
+    -moz-box-shadow: 0px 5px 10px -5px rgba(102,102,102,1);
+    box-shadow: 0px 5px 10px -5px rgba(102,102,102,1);
+}
+
+a{
+    color: #fff;
+}
+
+.btn-outline-primary:hover{
+    box-shadow: inset 0px 5px 10px -5px rgba(102,102,102,1);
+}
+

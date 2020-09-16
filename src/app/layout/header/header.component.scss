@@ -42,13 +42,17 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
     margin: 0px 20px;
     background: $primary;
     border: none;
-    color: $white;
+    color: $white !important;
     -webkit-box-shadow: $shadow-outline;
     -moz-box-shadow: $shadow-outline;
     box-shadow: $shadow-outline;
 
     &:hover{
         box-shadow: $shadow-inset;
+    }
+    
+    a{
+        color: $white;
     }
 }
 
