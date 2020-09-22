@@ -1,5 +1,10 @@
-<h2>{{(quizz$ | async)?.name }}</h2>
-<p>{{(quizz$ | async)?.categorie  }}</p>
+<div class="row">
+    <div class="quizzTitle col-sm-12 col-md-8 col-lg-9">
+        <h2>{{(quizz$ | async)?.name }}</h2>
+        <p>{{(quizz$ | async)?.categorie  }}</p>
+    </div>
+    <iam-countdown init="60" class="counter col-sm-12 col-md-4 col-lg-3"></iam-countdown>
+</div>
 <hr>
 
 <div id="quizz">
@@ -17,8 +22,10 @@
                 <span>
                     <ul *ngFor="let question of questions$ | async" class="list-group checked-list-box">
                         <p>
-                            <label class="list-group-item">
-                                <input type="radio" name="{{question.nameAttribute }}" id="" > {{ question.title }}
+                            <label [ngClass]="{'list-group-item': true,
+                                'list-group-item-success': choose > 0}"
+                                [ngStyle]="{color: getColor()}">
+                                <input name="displayParameter" (change)="handleChange($event)" type="radio" [attr.name]="question._id" id=""> {{ question.title }}
                             </label>
                         </p>
                     </ul>
@@ -29,6 +36,13 @@
 </div>
 
 <!-- 
+    (click)="onChoosed()"
+    [ngClass]="{'list-group-item': true,
+    'primary': postloveIts > 0}"
+    [ngStyle]="{color: getColor()}"
+    (click)="onChoosed()"
+
+
 <div *ngFor="let question of questions$ | async" class="quizQuestionContent">
     <h4>{{ question.title }} <span>({{ question.note }}) Ponts</span> </h4>
     <p> {{ question._id }}</p>
@@ -42,6 +56,8 @@
         <hr>
     </div>
 </div>
+
+<countdown [config]="{leftTime: 30}"></countdown>
 -->
 
 <a routerLink="/" class="btn btn-sm btn-outline-primary" type="button">Go back</a>

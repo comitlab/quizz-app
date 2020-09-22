@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
-import { QuizzListComponent } from './quizz-list';
-import { QuizzDetailComponent } from './quizz-detail';
 import { RouterModule } from '@angular/router';
 import { QUIZZ_ROUTES } from './quizz-routes';
-
-// For using the directive *ngFor
 import { CommonModule } from '@angular/common';
-import { QuizzService } from '../services/quizz/quizz.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
+// Services
+import { QuizzService } from '../services/quizz/quizz.service';
+import { AuthService } from '../services/user/user.service';
+
+// Components
+import { QuizzListComponent } from './quizz-list';
+import { QuizzDetailComponent } from './quizz-detail';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AuthService } from '../services/user/user.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CountdownComponent } from './countdown/countdown.component';
 
 @NgModule({
   imports: [
@@ -20,14 +23,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     QuizzListComponent, 
     QuizzDetailComponent,
     LoginComponent, 
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    CountdownComponent
   ],
   providers: [
     QuizzService,

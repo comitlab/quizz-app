@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuizzService } from '../../services/quizz/quizz.service';
 import { Observable } from 'rxjs';
@@ -24,11 +24,28 @@ export class QuizzDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizz$ = this.quizzService.getSingleQuizz(id);
     const quizzId = this.route.snapshot.paramMap.get('id');
-    //
-  //  this.questions$ = this.quizzService.getQuizzQuestons(id);
+
+    //  this.questions$ = this.quizzService.getQuizzQuestons(id);
 
     this.questions$ = this.quizz$.pipe(map(quizz => quizz.questions));
-    //
-  //  this.responses$ = this.questions$.pipe(map(question => question.responses));
+
+    //  this.responses$ = this.questions$.pipe(map(question => question.responses));
+  }
+
+  @Input() choose: number;
+
+  handleChange(evt){ 
+      if(evt.isTrusted) {
+        console.log('isTrusted');
+        return this.choose++;
+      }
+  }
+
+  getColor() {
+    if(this.choose > 0) {
+      return 'green';
+    } else if(this.choose < 0) {
+      return 'red';
+    }
   }
 }

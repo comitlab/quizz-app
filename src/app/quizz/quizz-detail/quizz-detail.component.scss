@@ -9,6 +9,16 @@ $radius: 5px;
 $shadow-inset: inset 0px 5px 10px -5px rgba(102,102,102,1);
 $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 
+.red{
+     color: red;
+}
+
+.green{
+     color: green;
+}
+
+
+
 .btn-outline-primary{
     border: 1px solid $primary;
     color: $primary;
