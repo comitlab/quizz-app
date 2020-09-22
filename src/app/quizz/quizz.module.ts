@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Services
 import { QuizzService } from '../services/quizz/quizz.service';
 import { AuthService } from '../services/user/user.service';
+import { CounterService } from '../services/counter/counter.service';
 
 // Components
 import { QuizzListComponent } from './quizz-list';
@@ -35,7 +36,8 @@ import { CountdownComponent } from './countdown/countdown.component';
   ],
   providers: [
     QuizzService,
-    AuthService
+    AuthService,
+    CounterService
   ],
 })
 export class QuizzModule {}

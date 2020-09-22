@@ -2049,6 +2049,18 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+angular-country-picker@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/angular-country-picker/-/angular-country-picker-2.2.0.tgz#6bf5569616bd761578e71165690b68c80d053d14"
+  integrity sha512-tF+8lisnA5eiGv5GTzdDy1el8B5r4mAneUVnDIistEZiH7GrAd9EmHD10J8Ci4FRpzlvwP3ysHSAmmiY4YznoQ==
+  dependencies:
+    angular "^1.7.2"
+
+angular@^1.7.2:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.8.0.tgz#b1ec179887869215cab6dfd0df2e42caa65b1b51"
+  integrity sha512-VdaMx+Qk0Skla7B5gw77a8hzlcOakwF8mjlW13DpIWIDlfqwAbSSLfd8N/qZnzEmQF4jC4iofInd3gE7vL8ZZg==
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -8787,6 +8799,13 @@ netmask@^1.0.6:
   resolved "https://registry.yarnpkg.com/netmask/-/netmask-1.0.6.tgz#20297e89d86f6f6400f250d9f4f6b4c1945fcd35"
   integrity sha1-ICl+idhvb2QA8lDZ9Pa0wZRfzTU=
 
+ngx-countdown@^10.0.1:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/ngx-countdown/-/ngx-countdown-10.0.1.tgz#57ad5d8e733abe2c3c08ad1bb5f826d6f260515c"
+  integrity sha512-4qxxm1RFV0XqVyUivtsREaHOm3wkUJQ0Q150aJPq+Cbe6W9OVaTaNWu/BlPHvPYTJ3SainUEoS8Owb55p8Sanw==
+  dependencies:
+    tslib "^2.0.0"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -12253,6 +12272,11 @@ tslib@1.10.0, tslib@^1.10.0, tslib@^1.7.1, tslib@^1.8.0, tslib@^1.8.1, tslib@^1.
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
+
+tslib@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.1.tgz#410eb0d113e5b6356490eec749603725b021b43e"
+  integrity sha512-SgIkNheinmEBgx1IUNirK0TUD4X9yjjBRTqqjggWCU3pUEqIk3/Uwl3yRixYKT6WjQuGiwDv4NomL3wqRCj+CQ==
 
 tslint@~5.15.0:
   version "5.15.0"

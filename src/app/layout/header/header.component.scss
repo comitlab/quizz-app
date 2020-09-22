@@ -1,10 +1,15 @@
 // Color
 $primary: #7451eb;
+$primaryOpacity_1: #9074ef;
+$primaryOpacity_2: #7d59f7;
 $white: #fff;
 
 // Shadow
 $shadow-inset: inset 0px 5px 10px -5px rgba(102,102,102,1);
 $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
+
+// Radius
+$redius: 2px;
 
 .navbar{
     background: $white;
@@ -23,6 +28,26 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
             margin-right: 20px;
             font-weight: 400;
             color: $primary;
+            padding: 5px 10px;
+            border-radius: $redius;
+            transition: all 0.3s ease-in-out;
+
+            &:hover{
+                color: $white;
+                background: $primaryOpacity_1;
+                -webkit-transition: background-color 1000ms linear;
+                -ms-transition: background-color 1000ms linear;
+                transition: background-color 1000ms linear;
+            }
+
+            a{
+                color: $primary;
+
+                &:hover{
+                    color: $white;
+                    text-decoration: none;
+                }
+            }
         }
     }
 
@@ -62,9 +87,17 @@ $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
     -webkit-box-shadow: $shadow-inset;
     -moz-box-shadow: $shadow-inset;
     box-shadow: $shadow-inset;
+    transition: all 0.3s ease-in-out;
 
     p{
         font-size: 14px;
         letter-spacing: 0.5px;
+    }
+
+    &:hover{
+        background: $primaryOpacity_2;
+        -webkit-transition: background-color 1000ms linear;
+        -ms-transition: background-color 1000ms linear;
+        transition: background-color 1000ms linear;
     }
 }

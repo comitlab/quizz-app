@@ -1,0 +1,31 @@
+.btn-outline-primary{
+    border: 1px solid #7451eb;
+    color: #7451eb;
+}
+
+.btn-outline-primary:hover{
+    color: #fff;
+    background: #7451eb;
+}
+
+.card-list .card{
+    cursor: pointer;
+    border: none;
+    top: 0;
+    margin: 15px 0px;
+    padding: 0px;
+    transition: all 0.3s ease-in-out;
+}
+.card-list .card:hover{
+    background: #9074ef;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
+    top: -2px;
+    color: #fff;
+}
+
+.note{
+    float: right;
+    border-bottom: 1px solid #d0d0d0;
+}

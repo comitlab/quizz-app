@@ -1,9 +1,15 @@
 input, span{
     border-radius: 0px !important;
+    border-color: #f0f0f0;
 }
 
 .input-group, .btn-outline-primary{
     margin-bottom: 25px;
+}
+
+.input-group-text{
+    background: #7551ebe5;
+    color: #ffffff;
 }
 
 .btn-outline-primary{

@@ -8,60 +8,24 @@ const collectionName = modelName.toLowerCase();
 
 const UserSchema = new mongoose.Schema(
   {
-    firstName: {
-      type: String,
-      required: true,
+    firstName: {type: String, required: true, minLength: 3, maxLength: 30},
+    lastName: {type: String, required: true, minLength: 2, maxLength: 30},
+    email: {type: String, validate: {
+        validator: validator.isEmail, message: 'EMAIL_IS_NOT_VALID',
+      }, unique: true, required: true,
     },
-    lastName: {
-      type: String,
-      required: true,
-    },
-    email: {
-      type: String,
-      validate: {
-        validator: validator.isEmail,
-        message: 'EMAIL_IS_NOT_VALID',
-      },
-      lowercase: true,
-      unique: true,
-      required: true,
-    },
-    password: {
-      type: String,
-      required: true,
-      select: false,
-    },
-    role: {
-      type: String,
-      enum: ['user', 'admin'],
-      default: 'user',
-    },
-    verification: {
-      type: String,
-    },
-    verified: {
-      type: Boolean,
-      default: false,
-    },
-    phone: {
-      type: String,
-    },
-    city: {
-      type: String,
-    },
-    country: {
-      type: String,
-    },
-    loginAttempts: {
-      type: Number,
-      default: 0,
-      select: false,
-    },
-    blockExpires: {
-      type: Date,
-      default: Date.now,
-      select: false,
-    },
+    password: {type: String, required: true, select: false,},
+    role: {type: String, enum: ['user', 'admin'], default: 'user',},
+    verification: {type: String,},
+    verified: {type: Boolean, default: false,},
+    phone: {type: Number, required: true,},
+    city: {type: String, required: true},
+    country: {type: String, required: true},
+    homeInstitution: {type: String, required: true},
+    pathway: {type: String, required: true},
+    average: {type: Number, required: true},
+    loginAttempts: {type: Number, default: 0, select: false},
+    blockExpires: {type: Date, default: Date.now, select: false},
   },
   {
     versionKey: false,

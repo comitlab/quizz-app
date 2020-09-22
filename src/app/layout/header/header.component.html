@@ -12,18 +12,18 @@
       <div class="collapse navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a routerLink="/" >Quizz</a>
+            <a routerLink="/" >Quizz <i class="fas fa-list"></i></a>
           </li>
           <li class="nav-item">
-            <a routerLink="#" class="">Add a new Quizz</a>
+            <a routerLink="#" class="">Add a new Quizz <i class="fas fa-plus"></i></a>
+          </li>
+          <li class="nav-item pull-right">
+            <a [routerLink]="['/login']" routerLinkActive="active">Login <i class="fas fa-sign-in-alt"> </i></a>
+          </li>
+          <li class="nav-item">
+            <a [routerLink]="['/register']" routerLinkActive="active">Register <i class="fas fa-check"></i></a>
           </li>
         </ul>
-        <button class="btn btn-sm btn-outline-primary pull-right" type="button">
-          <a [routerLink]="['/login']" routerLinkActive="active">Login <i class="fas fa-sign-in-alt"> </i></a>
-        </button>
-        <button class="btn btn-sm btn-outline-primary pull-right" type="button">
-          <a [routerLink]="['/register']" routerLinkActive="active">Register <i class="fas fa-paper-plane"> </i></a>
-        </button>
       </div>
     </div>
   </nav>

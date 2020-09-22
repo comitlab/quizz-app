@@ -1,5 +1,6 @@
 // Color
 $primary: #7451eb;
+$primaryOpacity_1: #9074ef;
 $white: #fff;
 $silver: #f0f0f0;
 
@@ -9,23 +10,17 @@ $radius: 5px;
 $shadow-inset: inset 0px 5px 10px -5px rgba(102,102,102,1);
 $shadow-outline: 0px 5px 10px -5px rgba(102,102,102,1);
 
-.red{
-     color: red;
-}
-
-.green{
-     color: green;
-}
-
-
-
 .btn-outline-primary{
     border: 1px solid $primary;
     color: $primary;
+    transition: all 0.3s ease-in-out;
 
     &:hover{
         color: $white;
-        background: $primary;
+        background: $primaryOpacity_1;
+        -webkit-transition: background-color 1000ms linear;
+        -ms-transition: background-color 1000ms linear;
+        transition: background-color 1000ms linear;
     }
 }
 

@@ -23,4 +23,3 @@ export const fetchOne = (req, res, next) => {
     .then(data => res.json({data}))
     .catch(err => utils.handleError(res, err));
 };
-

@@ -1,1 +1,38 @@
-<p>user works!</p>
+<h1>List of Students</h1>
+<hr>
+
+<div class="container">
+    <div class="row card-list">
+        <div class="card col-sm-12 col-md-6 col-lg-4" >
+            <div class="card-body">
+                <h3 class="card-title">Mamadou Lamine Mbaye</h3>
+                <p class="card-categorie">Droit des entreprises <span class="note">14</span></p>
+            </div>
+        </div>
+        <div class="card col-sm-12 col-md-6 col-lg-4" >
+            <div class="card-body">
+                <h3 class="card-title">Absatou Laye Diop</h3>
+                <p class="card-categorie">Management <span class="note">13.53</span></p>
+            </div>
+        </div>
+        <div class="card col-sm-12 col-md-6 col-lg-4" >
+            <div class="card-body">
+                <h3 class="card-title">Yanik Travis  Scall</h3>
+                <p class="card-categorie">Network and Systems <span class="note">17</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row card-list">
+        <div [routerLink]="['/users', user._id]" 
+                class="card col-sm-12 col-md-6 col-lg-4" 
+                *ngFor="let user of users$ | async ">
+            <div class="card-body">
+                <h3 class="card-title">{{ user.firstName }}</h3>
+                <p class="card-categorie">{{ user.city }}</p>
+            </div>
+        </div>
+    </div>
+</div>

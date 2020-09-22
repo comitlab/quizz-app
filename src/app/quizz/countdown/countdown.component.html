@@ -1,2 +1,9 @@
-<h2 class="timer">{{counter}} s</h2>
-<p>Counterdown timer</p>
+<div [ngStyle]="{color: getColor()}">
+    <div *ngIf="counter > '0'" class="haveTime">
+        <h2 class="timer">{{counter}} s</h2>
+        <p >Counterdown timer</p>
+    </div>
+    <div *ngIf="counter <= '0'" class="dontHaveTime">
+        <h2>Time over</h2>
+    </div>
+</div>

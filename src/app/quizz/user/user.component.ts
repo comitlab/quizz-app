@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { User } from 'src/app/services/models/user.model';
-import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -8,23 +8,13 @@ import { AuthService } from 'src/app/services/user/user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent implements OnInit, OnDestroy {
+export class UserComponent implements OnInit {
 
-  users: User[];
-  userSubscription: Subscription;
+  users$: Observable<User[]>;
 
   constructor(private authService:  AuthService) { }
 
   ngOnInit() {
-    this.userSubscription = this.authService.userSubject.subscribe(
-      (users: User[]) => {
-        this.users = users;
-      }
-    );
-    this.authService.emitUser();
-  }
-
-  ngOnDestroy() {
-    this.userSubscription.unsubscribe()
+    this.users$ = this.authService.getAllUser();
   }
 }

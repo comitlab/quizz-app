@@ -12,12 +12,10 @@ import { AuthService } from 'src/app/services/user/user.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  defaultSerie = "L2";
 
   constructor(private authService:  AuthService, 
               private router: Router,
               private formBuilder: FormBuilder) { 
-
   }
 
   ngOnInit() {
@@ -29,12 +27,13 @@ export class RegisterComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       birthDate: ['', [Validators.required]],
-      birthplace: ['', [Validators.required]],
-      telephone: ['', [Validators.required]],
-      addTelephone: ['', [Validators.required]],
-      cni: ['', [Validators.required, Validators.minLength(13)]],
-      serie: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      cni: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13)]],
+      pathway: ['', [Validators.required]],
       homeInstitution: ['', [Validators.required]],
       average: ['', [Validators.required], Validators.max(20)]
     })
@@ -42,20 +41,25 @@ export class RegisterComponent implements OnInit {
 
   onSubmitForm(){
     const formValue = this.registerForm.value;
-    const newUser = new User(
-      formValue['firstName'],
-      formValue['lastName'],
-      formValue['email'],
-      formValue['birthDate'],
-      formValue['birthplace'],
-      formValue['telephone'],
-      formValue['addTelephone'],
-      formValue['cni'],
-      formValue['serie'],
-      formValue['homeInstitution'],
-      formValue['average'],
-    );
-    this.authService.addUser(newUser);
-    this.router.navigate(['/users'])
+    const newUser = new User();
+
+    const firstName = formValue.firstName;
+    const lastName = formValue.lastName;
+    const email = formValue.email;
+    const password = formValue.password;
+    const birthDate = formValue.birthDate;
+    const city = formValue.city;
+    const country = formValue.country;
+    const phone = formValue.phone;
+    const cni = formValue.cni;
+    const homeInstitution = formValue.homeInstitution;
+    const pathway = formValue.pathway;
+    const average = formValue.average;
+
+    this.authService.registerUser(formValue).subscribe(data => {
+      console.log(data);
+      console.log(formValue);
+    })
+  //  this.router.navigate(['/users'])
   }
 }

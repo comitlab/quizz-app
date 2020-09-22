@@ -1,14 +1,18 @@
 export class User {
-    constructor(public firstName: string, 
-                public lastName: string,
-                public email: string,
-                public birthDate: string, // date
-                public birthplace: string,
-                public telephone: number,
-                public addTelephone: number,
-                public cni: number,
-                public serie: string,
-                public homeInstitution: string,
-                public average: number,
-    ) {}
+    _id: string;
+    firstName: string; 
+    lastName: string;
+    email: string;
+    password: string;
+    role: string;
+    verified: boolean;
+    verification: string;
+    birthDate: number;
+    city: string;
+    country: string;
+    phone: number;
+    cni: number;
+    homeInstitution: string;
+    pathway: string;
+    average: number;  
 }

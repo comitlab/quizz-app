@@ -7,6 +7,8 @@ import { Question } from 'src/app/services/models/question.model';
 import { Response } from 'src/app/services/models/response.model';
 import { map } from 'rxjs/operators';
 
+// import { CountdownComponent } from '../countdown/countdown.component';
+
 @Component({
   selector: 'iam-quizz-detail',
   templateUrl: './quizz-detail.component.html',
@@ -18,9 +20,10 @@ export class QuizzDetailComponent implements OnInit {
   responses$: Observable<Response[]>;
 
   constructor(private route: ActivatedRoute,
-              private quizzService: QuizzService) { }
+              private quizzService: QuizzService) { 
+              }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.quizz$ = this.quizzService.getSingleQuizz(id);
     const quizzId = this.route.snapshot.paramMap.get('id');
@@ -32,20 +35,21 @@ export class QuizzDetailComponent implements OnInit {
     //  this.responses$ = this.questions$.pipe(map(question => question.responses));
   }
 
-  @Input() choose: number;
+  @Input() choose: number = 0;
 
   handleChange(evt){ 
       if(evt.isTrusted) {
-        console.log('isTrusted');
-        return this.choose++;
+        this.choose++;
+      } else {
+        this.choose = 0;
       }
   }
 
   getColor() {
     if(this.choose > 0) {
-      return 'green';
-    } else if(this.choose < 0) {
-      return 'red';
+      return '#7451eb';
+    } else {
+      return '#f0f0f0';
     }
   }
 }
