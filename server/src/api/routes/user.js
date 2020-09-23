@@ -6,7 +6,12 @@ const router = express.Router();
 /**
  * GET /api/quizz
  */
-router.get('/users', userController.fetchAll);
+router.get('/', userController.fetchAll);
+
+/**
+ * GET single-user by ID param
+ */
+router.get('/:id', userController.fetchOne);
 
 export default router;
 

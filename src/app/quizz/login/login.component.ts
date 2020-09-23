@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators  } from '@angular/forms'
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/user/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'iam-login',
@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private authService:  AuthService, 
+  constructor(private userService:  UserService, 
               private router: Router,
               private formBuilder: FormBuilder) { }
 

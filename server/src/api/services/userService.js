@@ -27,3 +27,23 @@ export const getAllUser = () =>
             },
         );
     });
+
+/**
+ * Get all one user.
+*/
+
+export const getOneUser = (id) =>
+  new Promise((resolve, reject) => {
+    User.findOne({ _id: id},
+      '-updatedAt -createdAt',
+      {},
+      (err, item) => {
+        if(err) {
+          reject(utils.buildErrObject(402, err.message));
+
+          return;
+        }
+        resolve(item);
+    }
+  )
+})

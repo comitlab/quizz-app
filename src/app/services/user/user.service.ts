@@ -6,11 +6,11 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
-const baseUrl = environment.apiUrl + '/users';
+const baseUrl = environment.apiUrl + '/user';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class UserService {
 
   header = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};

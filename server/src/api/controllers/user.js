@@ -1,4 +1,4 @@
-import {getAllUser} from '../services/userService';
+import {getAllUser, getOneUser} from '../services/userService';
 import * as utils from '../middlewares/utils';
 
 /**
@@ -14,3 +14,13 @@ export const fetchAll = (req, res, next) => {
     .then(data => res.json({data}))
     .catch(err => utils.handleError(res, err))
 }
+
+/**
+* GET single-user
+ */
+
+export const fetchOne = (req, res, next) => {
+    getOneUser(req.params.id)
+      .then(data => res.json({data}))
+      .catch(err => utils.handleError(res, err));
+};
