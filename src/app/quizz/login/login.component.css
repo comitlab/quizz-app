@@ -14,11 +14,13 @@ input, span{
 
 .btn-outline-primary{
     background: #7451eb;
+    padding: 8px;
     border: none;
     color: #fff;
     -webkit-box-shadow: 0px 5px 10px -5px rgba(102,102,102,1);
     -moz-box-shadow: 0px 5px 10px -5px rgba(102,102,102,1);
     box-shadow: 0px 5px 10px -5px rgba(102,102,102,1);
+    transition: all 0.3s ease-in-out;
 }
 
 a{
@@ -27,5 +29,8 @@ a{
 
 .btn-outline-primary:hover{
     box-shadow: inset 0px 5px 10px -5px rgba(102,102,102,1);
+    background: #9074ef;
+    -webkit-transition: background-color 1000ms linear;
+    -ms-transition: background-color 1000ms linear;
+    transition: background-color 1000ms linear;
 }
-

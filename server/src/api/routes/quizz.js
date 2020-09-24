@@ -1,12 +1,11 @@
 import express from 'express';
-// import passport from'passport';
+import passport from'passport';
 import * as quizzController from '../controllers/quizz';
 import * as questionController from '../controllers/question';
 import * as responseController from '../controllers/response';
 
 const router = express.Router();
 
-/**
 const requireAuth = passport.authenticate('jwt', {
   session: false,
 });

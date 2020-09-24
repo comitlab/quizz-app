@@ -1,21 +1,42 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmitForm()">
+<form [formGroup]="loginForm" (ngSubmit)="onLoginUser()">
     <div class="row justify-content-md-center">
-        <div class="col-md-4 input-group flex-nowrap">
+        <div class="col-md-5 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-envelope"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-envelope"></i>
+                </span>
             </div>
-            <input type="email" class="form-control" formControlName="email" placeholder="sowmoamed96@mail.com" aria-label="email" aria-describedby="addon-wrapping">
+            <input type="email" 
+                    class="form-control" 
+                    formControlName="email" 
+                    placeholder="sowmoamed96@mail.com" 
+                    aria-label="email" 
+                    aria-describedby="addon-wrapping">
         </div>
     </div>
     <div class="row justify-content-md-center">
-        <div class="col-md-4 input-group flex-nowrap">
+        <div class="col-md-5 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-key"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-key"></i>
+                </span>
             </div>
-            <input type="password" class="form-control" formControlName="password" placeholder="Password" aria-label="password" aria-describedby="addon-wrapping">
+            <input type="password" 
+                    class="form-control" 
+                    formControlName="password" 
+                    placeholder="Password" 
+                    aria-label="password" 
+                    aria-describedby="addon-wrapping">
         </div>
     </div>
     <div class="row justify-content-md-center">
-        <button class="col-md-1 btn btn-sm btn-outline-primary" type="submit" [disabled]="loginForm.invalid"> Login <i class="fas fa-sign-in-alt"> </i></button>
+        <button class="btn btn-sm btn-outline-primary" 
+                type="submit" 
+                [disabled]="loginForm.invalid"> 
+                    Login 
+                <i class="fas fa-sign-in-alt"></i>
+        </button>
     </div>
 </form>

@@ -18,7 +18,8 @@ const requireAuth = passport.authenticate('jwt', {
 
 /*
  * Register route
- */
+
+*/
 router.post(
   '/register',
   trimRequest.all,
@@ -75,6 +76,11 @@ router.get(
 /*
  * Login route
  */
-router.post('/login', trimRequest.all, validate.login, AuthController.login);
+router.post(
+  '/login', 
+  trimRequest.all, 
+  validate.login, 
+  AuthController.login
+);
 
 export default router;

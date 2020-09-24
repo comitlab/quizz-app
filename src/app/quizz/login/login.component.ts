@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormBuilder, FormGroup, Validators  } from '@angular/forms'
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/services/user/user.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'iam-login',
@@ -12,7 +12,9 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private userService:  UserService, 
+  //  loginUserData: {};
+
+  constructor(private authService:  AuthService, 
               private router: Router,
               private formBuilder: FormBuilder) { }
 
@@ -27,8 +29,20 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  onSubmit(form: NgForm) {
-    console.log(form.value);
+  onLoginUser(form: NgForm) {
+    const formValue = this.loginForm.value;
+  //  console.log(formValue);
+
+  this.authService.loginUser(formValue)
+      .subscribe(
+        res => {
+          console.log(res)
+          localStorage.setItem('token', res.token)
+        },
+        err => console.log(err),
+    )
+
+    this.router.navigate(['/quizzs'])
   }
 
 }

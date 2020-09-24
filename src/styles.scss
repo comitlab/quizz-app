@@ -5,7 +5,7 @@
 /* Import bootstrap */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-/*
+
 @import "~@angular/material/theming";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
@@ -18,7 +18,8 @@
 .custom-theme {
   @include angular-material-theme($app-custom-theme);
   //@include custom-components-theme($app-custom-theme);
-}*/
+}
+
 // Default styles
 body {
   margin: 0;

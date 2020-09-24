@@ -88,6 +88,7 @@ export const forgotPassword = async (req, res) => {
     const locale = req.getLocale();
     const data = matchedData(req);
 
+    // eslint-disable-next-line no-undef
     await findUser(data.email);
     const item = await authService.saveForgotPassword(req);
 

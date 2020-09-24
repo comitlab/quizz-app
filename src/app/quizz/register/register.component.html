@@ -1,60 +1,162 @@
 <h4>Identity</h4>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmitForm()">
+<form [formGroup]="registerForm" (ngSubmit)="onRegisterUser()">
     <div class="row justify-content-md-center">
-        <div class="col-md-5 input-group flex-nowrap">
+        <div class="col-md-3 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-user-graduate"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-user-graduate"></i>
+              </span>
             </div>
-            <input type="text" class="form-control" formControlName="firstName" placeholder="Mohamed" aria-label="firstName" aria-describedby="addon-wrapping" ngModel>
+            <input type="text" 
+                    class="form-control" 
+                    formControlName="firstName" 
+                    placeholder="Mohamed" 
+                    aria-label="firstName" 
+                    aria-describedby="addon-wrapping" 
+                    ngModel>
         </div>
-        <div class="col-md-5 input-group flex-nowrap">
+        <div class="col-md-3 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-user-graduate"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-user-graduate"></i>
+              </span>
             </div>
-            <input type="text" class="form-control" formControlName="lastName" placeholder="SOW" aria-label="lastName" aria-describedby="addon-wrapping" ngModel>
+            <input type="text" 
+                    class="form-control" 
+                    formControlName="lastName" 
+                    placeholder="SOW" 
+                    aria-label="lastName" 
+                    aria-describedby="addon-wrapping" 
+                    ngModel>
+        </div>
+        <div class="col-md-4 input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input type="email" 
+                   class="form-control" 
+                   formControlName="email" 
+                   placeholder="sowmohamed96@gmal.com" 
+                   aria-label="email" 
+                   aria-describedby="addon-wrapping" 
+                   ngModel>
         </div>
     </div>
 
     <div class="row justify-content-md-center">
+      <div class="col-md-4 input-group flex-nowrap">
+          <div class="input-group-prepend">
+            <span class="input-group-text" 
+                  id="addon-wrapping">
+                  <i class="fas fa-key"></i>
+            </span>
+          </div>
+          <input type="password" 
+                 class="form-control" 
+                 formControlName="password" 
+                 placeholder="Password" 
+                 aria-label="password" 
+                 aria-describedby="addon-wrapping" 
+                 ngModel>
+      </div>
+      <div class="col-md-3 input-group flex-nowrap">
+          <div class="input-group-prepend">
+            <span class="input-group-text" 
+                  id="addon-wrapping">
+                  <i class="fas fa-key"></i>
+            </span>
+          </div>
+          <input type="password" 
+                 class="form-control" 
+                 formControlName="confirmPassword" 
+                 placeholder="Confirm Password" 
+                 aria-label="password" 
+                 aria-describedby="addon-wrapping" 
+                 ngModel>
+      </div>
+      <div class="col-md-3 input-group flex-nowrap">
+          <div class="input-group-prepend">
+            <span class="input-group-text" 
+                  id="addon-wrapping">
+                  <i class="fas fa-birthday-cake"></i>
+            </span>
+          </div>
+          <input type="date" 
+                 class="form-control" 
+                 formControlName="birthDate" 
+                 placeholder="20/11/1996" 
+                 aria-label="birthDate" 
+                 aria-describedby="addon-wrapping" 
+                 ngModel>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <div class="col-md-5 input-group flex-nowrap">
+          <div class="input-group-prepend">
+            <span class="input-group-text" 
+                  id="addon-wrapping">
+                  <i class="fas fa-flag"></i>
+            </span>
+          </div>
+          <input type="text" 
+                 class="form-control" 
+                 formControlName="country" 
+                 placeholder="Senegal" 
+                 aria-label="country" 
+                 aria-describedby="addon-wrapping" 
+                 ngModel>
+      </div>
         <div class="col-md-5 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-envelope"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-map-pin"></i>
+              </span>
             </div>
-            <input type="email" class="form-control" formControlName="email" placeholder="sowmohamed96@gmal.com" aria-label="email" aria-describedby="addon-wrapping" ngModel>
-        </div>
-        <div class="col-md-5 input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-birthday-cake"></i></span>
-            </div>
-            <input type="date" class="form-control" formControlName="birthDate" placeholder="20/11/1996" aria-label="birthDate" aria-describedby="addon-wrapping" ngModel>
+            <input type="text" 
+                   class="form-control" 
+                   formControlName="city" 
+                   placeholder="Mbour" 
+                   aria-label="city" 
+                   aria-describedby="addon-wrapping" 
+                   ngModel>
         </div>
     </div>
     <div class="row justify-content-md-center">
       <div class="col-md-5 input-group flex-nowrap">
           <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping"><i class="fas fa-flag"></i></span>
+            <span class="input-group-text" 
+                  id="addon-wrapping">
+                  <i class="fas fa-phone"></i>
+            </span>
           </div>
-          <input type="text" class="form-control" formControlName="country" placeholder="Senegal" aria-label="country" aria-describedby="addon-wrapping" ngModel>
+          <input type="telephone" 
+                 class="form-control" 
+                 formControlName="phone" 
+                 placeholder="+221781756385" 
+                 aria-label="phone" 
+                 aria-describedby="addon-wrapping" 
+                 ngModel>
       </div>
         <div class="col-md-5 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-map-pin"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-id-card"></i>
+              </span>
             </div>
-            <input type="text" class="form-control" formControlName="city" placeholder="Mbour" aria-label="city" aria-describedby="addon-wrapping" ngModel>
-        </div>
-    </div>
-    <div class="row justify-content-md-center">
-      <div class="col-md-5 input-group flex-nowrap">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="addon-wrapping"><i class="fas fa-phone"></i></span>
-          </div>
-          <input type="telephone" class="form-control" formControlName="phone" placeholder="+221781756385" aria-label="phone" aria-describedby="addon-wrapping" ngModel>
-      </div>
-        <div class="col-md-5 input-group flex-nowrap">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-id-card"></i></span>
-            </div>
-            <input type="number" class="form-control" formControlName="cni" placeholder="1236218527961" aria-label="cni" aria-describedby="addon-wrapping" ngModel>
+            <input type="number" 
+                   class="form-control" 
+                   formControlName="cni" 
+                   placeholder="1236218527961" 
+                   aria-label="cni" 
+                   aria-describedby="addon-wrapping" 
+                   ngModel>
         </div>
     </div>
 
@@ -62,9 +164,16 @@
     <div class="row justify-content-md-center">
         <div class="col-md-3 input-group">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping"><i class="fas fa-list-ul"></i></span>
+                <span class="input-group-text" 
+                      id="addon-wrapping">
+                      <i class="fas fa-list-ul"></i>
+                </span>
               </div>
-            <select class="custom-select" formControlName="pathway" id="inputGroupSelect03" aria-label="Example select with button addon" [ngModel]="defaultSerie">
+            <select class="custom-select" 
+                    formControlName="pathway" 
+                    id="inputGroupSelect03" 
+                    aria-label="Example select with button addon" 
+                    ngModel>
               <option selected value="s1">S1</option>
               <option value="s2">S2</option>
               <option value="l1">L'1</option>
@@ -75,17 +184,40 @@
         </div>
         <div class="col-md-4 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-school"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-school"></i>
+              </span>
             </div>
-            <input type="text" class="form-control" formControlName="homeInstitution" placeholder="Saly High School" aria-label="homeInstitution" aria-describedby="addon-wrapping" ngModel>
+            <input type="text" 
+                   class="form-control" 
+                   formControlName="homeInstitution" 
+                   placeholder="Saly High School" 
+                   aria-label="homeInstitution" 
+                   aria-describedby="addon-wrapping" 
+                   ngModel>
         </div>
         <div class="col-md-2 input-group flex-nowrap">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="addon-wrapping"><i class="fas fa-clipboard"></i></span>
+              <span class="input-group-text" 
+                    id="addon-wrapping">
+                    <i class="fas fa-clipboard"></i>
+              </span>
             </div>
-            <input type="number" class="form-control" formControlName="average" placeholder="14.87" aria-label="average" aria-describedby="addon-wrapping" ngModel>
+            <input type="number" 
+                   class="form-control" 
+                   formControlName="average" 
+                   placeholder="14" 
+                   aria-label="average" 
+                   aria-describedby="addon-wrapping" 
+                   ngModel>
         </div>
-        <button class="btn btn-sm btn-outline-primary pull-right" type="submit" [disabled]="registerForm.invalid">Register <i class="fas fa-paper-plane"> </i></button>
+        <button class="btn btn-sm btn-outline-primary pull-right" 
+                type="submit" 
+                [disabled]="registerForm.invalid">
+                  Register 
+                <i class="fas fa-paper-plane"></i>
+        </button>
     </div>
 </form>
   

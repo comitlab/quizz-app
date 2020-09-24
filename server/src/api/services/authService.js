@@ -69,10 +69,16 @@ exports.setUserInfo = req => {
     _id: req._id,
     firstName: req.firstName,
     lastName: req.lastName,
-    phone: req.phone,
+    email: req.email,
+    password: req.password,
+    birthDate: req.birthDate,
     city: req.city,
     country: req.country,
-    email: req.email,
+    phone: req.phone,
+    cni: req.cni,
+    homeInstitution: req.homeInstitution,
+    pathway: req.pathway,
+    average: req.average,
     role: req.role,
     verified: req.verified,
   };
@@ -227,16 +233,23 @@ return new Promise((resolve, reject) => {
  *
  * @param {Object} req - Request object.
  */
+// eslint-disable-next-line require-await
 exports.registerUser = async req =>
   new Promise((resolve, reject) => {
     const user = new User({
       firstName: req.firstName,
       lastName: req.lastName,
-      phone: req.phone,
-      city: req.city,
-      country: req.country,
       email: req.email,
       password: req.password,
+      birthDate: req.birthDate,
+      city: req.city,
+      country: req.country,
+      phone: req.phone,
+      cni: req.cni,
+      homeInstitution: req.homeInstitution,
+      pathway: req.pathway,
+      average: req.average,
+      role: req.role,
       verification: uuid.v4(),
     });
 

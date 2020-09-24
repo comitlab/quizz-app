@@ -33,9 +33,45 @@ export const register = [
     .isEmpty()
     .withMessage('IS_EMPTY')
     .isLength({
-      min: 5,
+      min: 6,
     })
     .withMessage('PASSWORD_TOO_SHORT_MIN_5'),
+    check('country')
+    .exists()
+    .withMessage('MISSING')
+    .not()
+    .isEmpty()
+    .withMessage('IS_EMPTY'),
+    check('homeInstitution')
+    .exists()
+    .withMessage('MISSING')
+    .not()
+    .isEmpty()
+    .withMessage('IS_EMPTY'),
+    check('pathway')
+    .exists()
+    .withMessage('MISSING')
+    .not()
+    .isEmpty()
+    .withMessage('IS_EMPTY'),
+    check('role')
+    .exists()
+    .withMessage('MISSING')
+    .not()
+    .isEmpty()
+    .withMessage('IS_EMPTY'),
+    check('phone')
+    .exists()
+    .withMessage('MISSING')
+    .not()
+    .isEmpty()
+    .withMessage('IS_EMPTY'),
+    check('birthDate')
+    .exists()
+    .withMessage('MISSING')
+    .not()
+    .isEmpty()
+    .withMessage('IS_EMPTY'),
   (req, res, next) => {
     validationResult(req, res, next);
   },
@@ -61,7 +97,7 @@ export const login = [
     .isEmpty()
     .withMessage('IS_EMPTY')
     .isLength({
-      min: 5,
+      min: 6,
     })
     .withMessage('PASSWORD_TOO_SHORT_MIN_5'),
   (req, res, next) => {
@@ -121,7 +157,7 @@ export const resetPassword = [
     .isEmpty()
     .withMessage('IS_EMPTY')
     .isLength({
-      min: 5,
+      min: 6,
     })
     .withMessage('PASSWORD_TOO_SHORT_MIN_5'),
   (req, res, next) => {

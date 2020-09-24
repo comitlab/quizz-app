@@ -1,4 +1,5 @@
-import {Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'iam-header',
@@ -9,10 +10,10 @@ export class HeaderComponent implements OnInit {
   @Input() title: string;
 
   isShown:boolean = false;
-  constructor() { }
+
+  constructor(private authService:  AuthService) { }
 
   ngOnInit() {
   }
 }
-
 

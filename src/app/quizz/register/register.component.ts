@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms'
 import { Router } from '@angular/router';
-import { User } from 'src/app/services/models/user.model';
-import { UserService } from 'src/app/services/user/user.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'iam-register',
@@ -12,8 +11,11 @@ import { UserService } from 'src/app/services/user/user.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
+  userCreated = new EventEmitter();
 
-  constructor(private userService:  UserService, 
+  //  registerUserData = {};
+
+  constructor(private authService:  AuthService, 
               private router: Router,
               private formBuilder: FormBuilder) { 
   }
@@ -28,38 +30,48 @@ export class RegisterComponent implements OnInit {
       lastName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
       birthDate: ['', [Validators.required]],
       city: ['', [Validators.required]],
       country: ['', [Validators.required]],
       phone: ['', [Validators.required]],
-      cni: ['', [Validators.required, Validators.minLength(13), Validators.maxLength(13)]],
+      cni: ['', [Validators.required, Validators.minLength(13)]],
       pathway: ['', [Validators.required]],
       homeInstitution: ['', [Validators.required]],
       average: ['', [Validators.required], Validators.max(20)]
     })
   }
 
-  onSubmitForm(){
+  onRegisterUser(){
     const formValue = this.registerForm.value;
-    const newUser = new User();
 
-    const firstName = formValue.firstName;
-    const lastName = formValue.lastName;
-    const email = formValue.email;
-    const password = formValue.password;
-    const birthDate = formValue.birthDate;
-    const city = formValue.city;
-    const country = formValue.country;
-    const phone = formValue.phone;
-    const cni = formValue.cni;
-    const homeInstitution = formValue.homeInstitution;
-    const pathway = formValue.pathway;
-    const average = formValue.average;
+    const newUser = {
+      firstName: formValue.firstName,
+      lastName: formValue.lastName,
+      email: formValue.email,
+      password: formValue.password,
+      birthDate: formValue.birthDate,
+      city: formValue.city,
+      country: formValue.country,
+      phone: formValue.phone,
+      cni: formValue.cni,
+      homeInstitution: formValue.homeInstitution,
+      pathway: formValue.pathway,
+      average: formValue.average
+    }
 
-    this.userService.registerUser(formValue).subscribe(data => {
-      console.log(data);
-      console.log(formValue);
-    })
+    this.userCreated.emit(newUser);
+  //  console.log(newUser);
+
+    this.authService.registerUser(formValue)
+      .subscribe(
+        res => {
+          console.log(res)
+          localStorage.setItem('token', res.token)
+        },
+        err => console.log(err),
+    )
+
   //  this.router.navigate(['/users'])
   }
 }

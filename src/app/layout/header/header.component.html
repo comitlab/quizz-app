@@ -6,10 +6,20 @@
           <img src=".../../../../../assets/icones/IAM_LOGO.png" width="80" height="30" alt="" loading="lazy">
         </a>
       </div>
-      <button #navbarToggler class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" (click)="isShown = !isShown" [attr.aria-expanded]="isShown" aria-expanded="false" aria-label="Toggle navigation">
+      <button #navbarToggler class="navbar-toggler" 
+              type="button" 
+              data-toggle="collapse" 
+              data-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" 
+              (click)="isShown = !isShown" 
+              [attr.aria-expanded]="isShown" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" 
+            [ngClass]="{ 'show': isShown }" 
+            id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a routerLink="/" >Quizz <i class="fas fa-list"></i></a>
@@ -17,27 +27,32 @@
           <li class="nav-item">
             <a routerLink="#" class="">Add a new Quizz <i class="fas fa-plus"></i></a>
           </li>
-          <li class="nav-item pull-right">
-            <a [routerLink]="['/login']" routerLinkActive="active">Login <i class="fas fa-sign-in-alt"> </i></a>
+          <li class="nav-item">
+            <a *ngIf="!authService.loggedIn()" 
+                [routerLink]="['/login']" 
+                routerLinkActive="active">
+                  Login 
+                <i class="fas fa-sign-in-alt"></i>
+            </a>
+          </li>
+          <li *ngIf="authService.loggedIn()"
+               class="nav-item">
+            <a  (click)="authService.logoutUser()"
+                routerLinkActive="active">
+                  LogOut 
+              <i class="fas fa-sign-out-alt"></i>
+            </a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['/register']" routerLinkActive="active">Register <i class="fas fa-check"></i></a>
+            <a *ngIf="!authService.loggedIn()" 
+                [routerLink]="['/register']" 
+                routerLinkActive="active">
+                  Register 
+              <i class="fas fa-check"></i>
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">IAM Level Test Application !!!</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Aliquet lectus proin nibh nisl condimentum id venenatis. 
-        Amet risus nullam eget felis eget nunc lobortis mattis. 
-        Et tortor at risus viverra adipiscing at in tellus. 
-        Risus at ultrices mi tempus imperdiet nulla malesuada.
-      </p>
-    </div>
-  </div>
 </header>
