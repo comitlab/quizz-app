@@ -14,5 +14,5 @@ export class User {
     cni: number;
     homeInstitution: string;
     pathway: string;
-    average: number;  
+    average: number;
 }

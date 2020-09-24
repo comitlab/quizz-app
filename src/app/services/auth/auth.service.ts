@@ -7,18 +7,37 @@ import { Router } from '@angular/router';
 import { User } from '../models/user.model';
 
 const baseUrl = environment.apiUrl + '/user';
+const registerUrl = environment.apiUrl;
+
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class AuthService {
 
   header = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
 
   constructor(private http: HttpClient, public router: Router) { }
 
-  registerUser(user: User): Observable<any> {
-    return this.http.post<User>(`${baseUrl}/register`, user).pipe();
+  registerUser(user) {
+    return this.http.post<any>(`${registerUrl}/register`, user);
+  }
+
+  loginUser(user) {
+    return this.http.post<any>(`${registerUrl}/login`, user);
+  }
+
+  loggedIn() {
+    return !!localStorage.getItem('token');
+  }
+
+  getToken(){
+    return localStorage.getItem('token');
+  }
+
+  logoutUser(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login']);
   }
 
   getAllUser(): Observable<any[]> {
